@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAMP HIYORI | Concept</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="concept-page">
+    <!-- Scroll Progress -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-track">
+            <div class="scroll-progress-thumb"></div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <img src="image/logo.png" alt="Logo" class="logo-img">
+            </a>
+            <ul class="nav-links nav-links-center">
+                <li><a href="concept.html" class="active">concept</a></li>
+                <li><a href="#">chill</a></li>
+                <li><a href="guestbook.html">guestbook</a></li>
+                <li><a href="index.html">home</a></li>
+                <li><a href="#">access</a></li>
+            </ul>
+            <a href="ticket.html" class="ticket-panel" aria-label="ticket reserve">
+                <span class="ticket-title serif">ticket</span>
+                <span class="ticket-sub serif">予約する</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <img src="image/image 51.png" class="hero-image" alt="Mountain camping view">
+        <div class="hero-content">
+            <h1 class="hero-title serif">山と時間を、たのしむ。</h1>
+        </div>
+    </section>
+
+    <!-- Dark Background Wrapper -->
+    <div class="dark-wrapper concept-wrapper">
+        <!-- 顶部装饰：半圆形 + CONCEPT 滚动文字 -->
+        <div class="dark-wrapper-top">
+            <div class="ticket-arc-container" aria-hidden="true">
+                <svg class="ticket-arc-svg" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMax slice">
+                    <ellipse cx="600" cy="340" rx="700" ry="220" fill="#7E847F"/>
+                    <defs>
+                        <path id="conceptArcPath" d="M 50 320 Q 600 80 1150 320" fill="none"/>
+                    </defs>
+                    <text class="ticket-arc-text">
+                        <textPath href="#conceptArcPath" startOffset="0%">
+                            CONCEPT · CONCEPT · CONCEPT · CONCEPT · CONCEPT · CONCEPT · CONCEPT · 
+                            <animate
+                                attributeName="startOffset"
+                                from="0%"
+                                to="-50%"
+                                dur="15s"
+                                repeatCount="indefinite"/>
+                        </textPath>
+                    </text>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content concept-content">
+            <!-- Concept Hero Layout -->
+            <section class="concept-hero-layout">
+                <!-- 左侧标语 -->
+                <div class="concept-hero-tagline">
+                    <p class="concept-tagline serif">自然の中で、<br>立ち止まれる時間を。</p>
+                </div>
+                
+                <!-- 右上角图片 + 点阵装饰 -->
+                <div class="concept-hero-img-top">
+                    <div class="concept-dots-decoration" aria-hidden="true">
+                        <div class="dots-grid"></div>
+                    </div>
+                    <div class="concept-img-wrapper">
+                        <img src="image/image 32.jpg" alt="Mountain view">
+                    </div>
+                </div>
+                
+                <!-- 左下角大图 -->
+                <div class="concept-hero-img-bottom">
+                    <img src="image/image 33.png" alt="Cabin view">
+                </div>
+            </section>
+
+            <!-- Concept Intro Section -->
+            <section class="concept-intro">
+                <div class="concept-intro-grid">
+                    <div class="concept-intro-left">
+                        <h2 class="section-title serif">Our<br>Philosophy</h2>
+                    </div>
+                    <div class="concept-intro-right">
+                        <p class="concept-description">
+                            自然の中で「何かをしなければならない」時間から離れ、<br>
+                            ただ水や風、光の変化を感じながら<br>
+                            それぞれのペースで過ごすことを大切にしています。
+                        </p>
+                        <p class="concept-description">
+                            音楽や食、焚き火といった要素は用意されていますが、<br>
+                            楽しみ方に正解はありません。<br>
+                            語る人も、静かに過ごす人も、<br>
+                            同じ時間を共有する参加者です。
+                        </p>
+                        <p class="concept-description">
+                            ここでは、<br>
+                            集まる理由をつくりすぎず、<br>
+                            自然の中に身を置くことそのものを、<br>
+                            一つの体験として味わってもらいたいと考えています。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Concept Image Gallery - Scrolling -->
+            <section class="concept-gallery-scroll">
+                <!-- 第一行：往左滚动 -->
+                <div class="gallery-scroll-row scroll-left">
+                    <div class="gallery-scroll-track">
+                        <div class="gallery-scroll-item"><img src="image/image 53.png" alt=""></div>
+                        <div class="gallery-scroll-item"><img src="image/image 54.png" alt=""></div>
+                        <div class="gallery-scroll-item"><img src="image/image 55.png" alt=""></div>
+                        <div class="gallery-scroll-item"><img src="image/image 58.png" alt=""></div>
+                        <div class="gallery-scroll-item"><img src="image/image 56.png" alt=""></div>
+                        <div class="gallery-scroll-item"><img src="image/image 57.png" alt=""></div>
+                        <!-- 复制一份用于无缝滚动 -->
+                        <div class="gallery-scroll-item"><img src="image/image 53.png" alt=""></div>
+                        <div class="gallery-scroll-item"><img src="image/image 54.png" alt=""></div>
+                        <div class="gallery-scroll-item"><img src="image/image 55.png" alt=""></div>
+                        <div class="gallery-scroll-item"><img src="image/image 58.png" alt=""></div>
+                        <div class="gallery-scroll-item"><img src="image/image 56.png" alt=""></div>
+                        <div class="gallery-scroll-item"><img src="image/image 57.png" alt=""></div>
+                    </div>
+                </div>
+                <!-- 第二行：往右滚动 -->
+                <div class="gallery-scroll-row scroll-right">
+                    <div class="gallery-scroll-track">
+                        <div class="gallery-scroll-item"><img src="image/image 63.png" alt=""></div>
+                        <div class="gallery-scroll-item"><img src="image/image 59.png" alt=""></div>
+                        <div class="gallery-scroll-item"><img src="image/image 60.png" alt=""></div>
+                        <div class="gallery-scroll-item"><img src="image/image 32.jpg" alt=""></div>
+                        <div class="gallery-scroll-item"><img src="image/image 61.png" alt=""></div>
+                        <div class="gallery-scroll-item"><img src="image/image 62.png" alt=""></div>
+                        <!-- 复制一份用于无缝滚动 -->
+                        <div class="gallery-scroll-item"><img src="image/image 63.png" alt=""></div>
+                        <div class="gallery-scroll-item"><img src="image/image 59.png" alt=""></div>
+                        <div class="gallery-scroll-item"><img src="image/image 60.png" alt=""></div>
+                        <div class="gallery-scroll-item"><img src="image/image 32.jpg" alt=""></div>
+                        <div class="gallery-scroll-item"><img src="image/image 61.png" alt=""></div>
+                        <div class="gallery-scroll-item"><img src="image/image 62.png" alt=""></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Concept Values Section -->
+            <section class="concept-values">
+                <h2 class="section-title serif centered">Our<br>Values</h2>
+                <div class="concept-values-grid">
+                    <div class="concept-value-card">
+                        <span class="value-number">01</span>
+                        <h3 class="value-title serif">静けさを大切に</h3>
+                        <p class="value-desc">
+                            喧騒から離れ、自然の音だけが響く空間。<br>
+                            焚き火のぱちぱちという音、風の音、<br>
+                            虫の声が心を落ち着かせます。
+                        </p>
+                    </div>
+                    <div class="concept-value-card">
+                        <span class="value-number">02</span>
+                        <h3 class="value-title serif">時間を忘れる</h3>
+                        <p class="value-desc">
+                            スケジュールに縛られない一日。<br>
+                            朝日とともに目覚め、<br>
+                            星空のもとで眠りにつく。
+                        </p>
+                    </div>
+                    <div class="concept-value-card">
+                        <span class="value-number">03</span>
+                        <h3 class="value-title serif">シンプルに生きる</h3>
+                        <p class="value-desc">
+                            本当に必要なものだけで過ごす時間。<br>
+                            自然の中では、<br>
+                            シンプルこそが贅沢です。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Decorative Elements -->
+            <div class="decorative-circle decorative-circle-1"></div>
+            <div class="decorative-circle decorative-circle-2"></div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top-line"></div>
+            <div class="footer-logo-wrapper">
+                <a href="index.html" class="footer-logo">
+                    <img src="image/logo2.png" alt="Logo" class="logo-img-footer">
+                </a>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <ul class="footer-links">
+                        <li><a href="ticket.html">ticket</a></li>
+                        <li><a href="#">chill</a></li>
+                        <li><a href="guestbook.html">guestbook</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <ul class="footer-links">
+                        <li><a href="concept.html">concept</a></li>
+                        <li><a href="#">access</a></li>
+                        <li><a href="index.html">home</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-icon">
+                        <svg fill="currentColor" viewBox="0 0 24 24" width="18" height="18">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <div class="x-icon">𝕏</div>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <svg fill="currentColor" viewBox="0 0 24 24" width="18" height="18">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <button class="footer-reserve-btn" onclick="window.location.href='ticket.html'">
+                    <span>RESERVE</span>
+                    <span class="footer-reserve-sub">予約する</span>
+                </button>
+                
+                <button class="page-top-btn" onclick="scrollToTop()">
+                    <svg class="page-top-circle" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <path id="page-top-text-path-concept" d="M 100,100 m -85,0 a 85,85 0 1,1 170,0 a 85,85 0 1,1 -170,0"/>
+                        </defs>
+                        <circle cx="100" cy="100" r="85" fill="none" stroke="white" stroke-width="2"/>
+                        <text class="page-top-text-rotator" fill="white" font-size="14" font-weight="700" letter-spacing="3">
+                            <textPath href="#page-top-text-path-concept" startOffset="0%">
+                                PAGE TOP • PAGE TOP • PAGE TOP • PAGE TOP
+                            </textPath>
+                        </text>
+                        <path d="M 100 125 L 100 75 M 100 75 L 88 87 M 100 75 L 112 87"
+                              stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

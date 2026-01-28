@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAMP HIYORI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        html {
+            background-color: #ffffff;
+        }
+        body {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body class="index-page">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+          <!-- Logo -->
+          <a href="#" class="navbar-logo">
+            <img src="image/logo.png" alt="Logo" class="logo-img">
+          </a>
+          <!-- 中间菜单 -->
+          <ul class="nav-links nav-links-center">
+            <li><a href="concept.html">concept</a></li>
+            <li><a href="#">chill</a></li>
+            <li><a href="#">timetable</a></li>
+            <li><a href="#">home</a></li>
+            <li><a href="#">acess</a></li>
+          </ul>
+            <!-- 右侧 ticket 块 -->
+    <a href="#" class="ticket-panel" aria-label="ticket reserve">
+        <span class="ticket-title serif">ticket</span>
+        <span class="ticket-sub serif">予約する</span>
+      </a>
+    </div>
+  </nav>
+
+    <!-- Hero Section -->
+    <section class="index-hero-wrapper">
+        <div class="index-hero">
+            <img src="image/indexdatu.png" alt="Glamping Hero" class="index-hero-image index-hero-slide" data-slide="0">
+            <img src="image/indexdatu2.png" alt="Glamping Hero 2" class="index-hero-image index-hero-slide" data-slide="1">
+            <img src="image/indexdatu3.png" alt="Glamping Hero 3" class="index-hero-image index-hero-slide" data-slide="2">
+            
+            <!-- Hero Title Overlay -->
+            <div class="hero-title-overlay">
+                <p class="hero-subtitle">SLOW LIFE CAMPING</p>
+                <h1 class="hero-main-title">CAMP HIYORI</h1>
+            </div>
+            
+            <!-- Scroll Down Indicator -->
+            <div class="scroll-down-indicator">
+                <span class="scroll-text">SCROLL DOWN</span>
+                <div class="scroll-arrow-wrap">
+                    <svg class="scroll-arrow" viewBox="0 0 24 48" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 0 L12 40 M4 32 L12 40 L20 32"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="index-bg-wrapper">
+            <img src="image/indexbg1.png" alt="Background Decoration" class="index-bg-decoration">
+            
+            <!-- Text Content Overlay -->
+            <div class="index-text-content">
+                <!-- Right side vertical text columns -->
+                <div class="index-text-columns">
+                    <div class="index-text-column">
+                        <p>キャンプヒヨリ</p>
+                    </div>
+                    <div class="index-text-column">
+                        <p>キャンプヒヨリは、忙しい日常から少しだけ離れ、自分の時間に立ち返るための小さなキャンプイベントです。</p>
+                    </div>
+                    <div class="index-text-column">
+                        <p>火を囲み、風の音に耳を澄まし、夜空を見上げる。ただそれだけのことが、心をゆっくり整えてくれます。</p>
+                    </div>
+                    <div class="index-text-column">
+                        <p>ここにあるのは、今日は、いい日だった」と思える時間だけ。</p>
+                    </div>
+                </div>
+                
+                <!-- Time Travel Text -->
+                <div class="index-time-travel">
+                    <!-- Left: Small vertical text -->
+
+                    <!-- Right: Large grid text -->
+                    <div class="time-travel-grid">
+                        <div class="time-travel-grid-item">
+                            <span>時</span>
+                            <span>間</span>
+                            <span>旅</span>
+                            <span>行</span>
+                        </div>
+
+                        <div class="time-travel-grid-item">
+                            <span>時</span>
+                            <span>間</span>
+                            <span>旅</span>
+                            <span>行</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Vive More Button -->
+                <div class="index-vive-more">
+                    <span class="vive-more-text">vive more</span>
+                    <a href="#" class="vive-more-btn">
+                        <svg class="vive-circle-svg" viewBox="0 0 100 100">
+                            <circle class="vive-circle-bg" cx="50" cy="50" r="46" fill="none" stroke="#999" stroke-width="2"/>
+                            <circle class="vive-circle-progress" cx="50" cy="50" r="40" fill="none" stroke="#555" stroke-width="2.5"/>
+                        </svg>
+                        <div class="vive-arrow-wrap">
+                            <svg class="vive-arrow vive-arrow-out" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                            </svg>
+                            <svg class="vive-arrow vive-arrow-in" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services Section -->
+    <section class="services-section">
+        <div class="services-container">
+            <div class="services-left">
+                <h2 class="services-title serif">
+                    <span class="title-line title-line-1">Our</span>
+                    <span class="title-line title-line-2">Services</span>
+                </h2>
+                <p class="services-description">
+                    自然・快適さ・シンプルさが調和したアウトドア体験を提供しています。設備の整ったキャンプサイトから、厳選されたキャンプギアまで、細部にまでこだわり、安心してくつろげる時間をご用意しています。キャンプは、本来あるべき姿へ――静かで、心地よく、自然のそばに。
+                </p>
+                <div class="services-image-small">
+                    <img src="image/oursev1.png" alt="Service Detail" class="services-small-img">
+                </div>
+            </div>
+            <div class="services-right">
+                <div class="services-image-top">
+                    <img src="image/oursev2.png" alt="BBQ Stadium" class="services-top-img">
+                </div>
+                <div class="services-image-bottom">
+                    <img src="image/oursev3.png" alt="Outdoor Dining" class="services-bottom-img">
+                </div>
+            </div>
+        </div>
+        
+        <!-- About Link Button -->
+        <div class="services-about-link">
+            <a href="#" class="about-circle-btn">
+                <svg class="about-circle-svg" viewBox="0 0 100 100">
+                    <!-- 外圈浅色线 -->
+                    <circle class="about-circle-bg" cx="50" cy="50" r="46" fill="none" stroke="#ccc" stroke-width="1.5"/>
+                    <!-- 内圈深灰色进度线 -->
+                    <circle class="about-circle-progress" cx="50" cy="50" r="42" fill="none" stroke="#555" stroke-width="2"/>
+                </svg>
+                <div class="about-arrow-wrap">
+                    <svg class="about-arrow about-arrow-out" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                    <svg class="about-arrow about-arrow-in" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                </div>
+            </a>
+            <span class="about-link-text">カンプヒヨリについて</span>
+        </div>
+    </section>
+
+    <!-- Northman Style Feature Section -->
+    <section class="northman-section">
+        <div class="northman-scroll js-northman-scroll">
+            <div class="northman-sticky">
+                <div class="northman-stage js-northman-stage">
+                    <!-- 可翻页内容卡：每一张都是「大卡片 + 小卡片」 -->
+                    <div class="northman-card northman-feature-card northman-card-page js-northman-card" data-index="0">
+                        <div class="northman-card-inner">
+                            <div class="northman-left">
+                                <div class="northman-meta-row">
+                                    <span class="northman-meta-index">01</span>
+                                    <span class="northman-meta-dot">*</span>
+                                    <span class="northman-meta-tag">northman style</span>
+                                </div>
+                                <h2 class="northman-title serif">
+                                    焚き火と、<br>
+                                    北国の夜を味わう。
+                                </h2>
+                                <p class="northman-body">
+                                    静かな森の中、テントの中にやわらかい灯りがともり、外では焚き火のぱちぱちという音だけが聞こえる時間。北国ならではの澄んだ空気と、少しひんやりとした夜風が、日常のざわめきをゆっくりと溶かしてくれます。
+                                </p>
+                                <p class="northman-body">
+                                    テーブルには温かいスープと、じっくり焼き上げたグリル料理。お気に入りのブランケットにくるまりながら、ただ火を見つめて過ごす――そんな「northman」なひとときがここにはあります。
+                                </p>
+                            </div>
+                            <div class="northman-right">
+                                <div class="northman-main-image-wrap">
+                                    <img src="image/2.jpg" alt="Northman main" class="northman-main-image">
+                                </div>
+                                <div class="northman-thumb-overlay">
+                                    <div class="northman-thumb-card">
+                                        <img src="image/3.jpg" alt="Northman detail" class="northman-thumb-image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="northman-card northman-feature-card northman-card-page js-northman-card" data-index="1">
+                        <div class="northman-card-inner">
+                            <div class="northman-left">
+                                <div class="northman-meta-row">
+                                    <span class="northman-meta-index">02</span>
+                                    <span class="northman-meta-dot">*</span>
+                                    <span class="northman-meta-tag">northman style</span>
+                                </div>
+                                <h2 class="northman-title serif">
+                                    焚き火と、<br>
+                                    朝まで話そう。
+                                </h2>
+                                <p class="northman-body">
+                                    日が沈んだあと、焚き火の灯りだけを頼りにゆっくりと語り合う時間。忙しさに流されてしまった言葉や、なかなか伝えられなかった想いも、炎のゆらぎの中だと、自然とこぼれ落ちていきます。
+                                </p>
+                                <p class="northman-body">
+                                    熱いマグカップを両手で包み込みながら、ときどき空を見上げて、また笑い合う。そんなささやかな一晩が、きっと忘れられない思い出になります。
+                                </p>
+                            </div>
+                            <div class="northman-right">
+                                <div class="northman-main-image-wrap">
+                                    <img src="image/1.jpg" alt="Northman main 2" class="northman-main-image">
+                                </div>
+                                <div class="northman-thumb-overlay">
+                                    <div class="northman-thumb-card">
+                                        <img src="image/image 41.jpg" alt="Northman detail 2" class="northman-thumb-image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="northman-card northman-feature-card northman-card-page js-northman-card" data-index="2">
+                        <div class="northman-card-inner">
+                            <div class="northman-left">
+                                <div class="northman-meta-row">
+                                    <span class="northman-meta-index">03</span>
+                                    <span class="northman-meta-dot">*</span>
+                                    <span class="northman-meta-tag">northman style</span>
+                                </div>
+                                <h2 class="northman-title serif">
+                                    焚き火と、<br>
+                                    風の音を聞く。
+                                </h2>
+                                <p class="northman-body">
+                                    パチパチと弾ける薪の音、木々を抜ける風の音。夜の静けさの中で、自然のリズムだけがゆっくりと身体に染み込んでいきます。
+                                </p>
+                                <p class="northman-body">
+                                    何かをしなくてもいい。火を見つめて深呼吸するだけで、心が少し軽くなる。そんな夜を用意しました。
+                                </p>
+                            </div>
+                            <div class="northman-right">
+                                <div class="northman-main-image-wrap">
+                                    <img src="image/3.jpg" alt="Northman main 3" class="northman-main-image">
+                                </div>
+                                <div class="northman-thumb-overlay">
+                                    <div class="northman-thumb-card">
+                                        <img src="image/2.jpg" alt="Northman detail 3" class="northman-thumb-image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="northman-card northman-feature-card northman-card-page js-northman-card" data-index="3">
+                        <div class="northman-card-inner">
+                            <div class="northman-left">
+                                <div class="northman-meta-row">
+                                    <span class="northman-meta-index">04</span>
+                                    <span class="northman-meta-dot">*</span>
+                                    <span class="northman-meta-tag">northman style</span>
+                                </div>
+                                <h2 class="northman-title serif">
+                                    焚き火と、<br>
+                                    星を数える夜。
+                                </h2>
+                                <p class="northman-body">
+                                    火のゆらぎを眺めながら、ふと空を見上げると、北国の澄んだ夜空に星が静かに瞬いています。耳をすませば、遠くの虫の声と、焚き火の音だけ。
+                                </p>
+                                <p class="northman-body">
+                                    目の前の時間をゆっくり味わう。そんな「何もしない贅沢」を、この場所で。
+                                </p>
+                            </div>
+                            <div class="northman-right">
+                                <div class="northman-main-image-wrap">
+                                    <img src="image/image 43.jpg" alt="Northman main 4" class="northman-main-image">
+                                </div>
+                                <div class="northman-thumb-overlay">
+                                    <div class="northman-thumb-card">
+                                        <img src="image/1.jpg" alt="Northman detail 4" class="northman-thumb-image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news-section">
+        <!-- 鼠标跟随圆形 -->
+        <div class="news-cursor-circle">
+            <span>詳しく見る</span>
+        </div>
+        <div class="news-container">
+            <div class="news-heading">
+                <span class="title-line title-line-1">Our</span>
+                <span class="title-line title-line-2">News</span>
+            </div>
+
+            <div class="news-list">
+                <article class="news-item">
+                    <div class="news-top-line"></div>
+                    <div class="news-row">
+                        <div class="news-thumb">
+                            <img src="image/1.jpg" alt="News 01">
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">(01)</div>
+                            <h3 class="news-title">いよいよ、明日・明後日開催！</h3>
+                            <p class="news-subtitle">春のキャンプイベント、ついに開催です！ 当日参加OK・現地受付のご案内もあわせてお知らせします。</p>
+                            <p class="news-desc">イベント限定オリジナルグッズを身に着けて焚き火を囲んで、みんなでイッタイカーソ！</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-item">
+                    <div class="news-top-line"></div>
+                    <div class="news-row">
+                        <div class="news-thumb">
+                            <img src="image/2.jpg" alt="News 02">
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">(02)</div>
+                            <h3 class="news-title">いよいよ、明日・明後日開催！</h3>
+                            <p class="news-subtitle">春のキャンプイベント、ついに開催です！ 当日参加OK・現地受付のご案内もあわせてお知らせします。</p>
+                            <p class="news-desc">イベント限定オリジナルグッズを身に着けて焚き火を囲んで、みんなでイッタイカーソ！</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-item">
+                    <div class="news-top-line"></div>
+                    <div class="news-row">
+                        <div class="news-thumb">
+                            <img src="image/3.jpg" alt="News 03">
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">(03)</div>
+                            <h3 class="news-title">いよいよ、明日・明後日開催！</h3>
+                            <p class="news-subtitle">春のキャンプイベント、ついに開催です！ 当日参加OK・現地受付のご案内もあわせてお知らせします。</p>
+                            <p class="news-desc">イベント限定オリジナルグッズを身に着けて焚き火を囲んで、みんなでイッタイカーソ！</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+    </section>
+
+    <!-- Access + Conversation Wrapper with background -->
+    <div class="access-conversation-wrapper">
+    <!-- Access Section -->
+    <section class="access-section" id="access">
+        <div class="access-container">
+            <div class="access-title-block">
+                <div class="access-title serif">
+                    <span class="title-line title-line-1">Our</span>
+                    <span class="title-line title-line-2">Access</span>
+                </div>
+            </div>
+
+            <div class="access-info-card">
+                <div class="access-info-row">
+                    <div class="access-info-item">
+                        <div class="access-pill">ADDRESS</div>
+                        <p class="access-pill-text">東京都青梅市梅郷4丁目12−8</p>
+                    </div>
+                    <div class="access-info-item">
+                        <div class="access-pill">TEL</div>
+                        <p class="access-pill-text">0120-006-155</p>
+                    </div>
+                </div>
+                <div class="access-info-row">
+                    <div class="access-info-item">
+                        <div class="access-pill">HOUR</div>
+                        <p class="access-pill-text">Check in　15:00<br>
+                        Check out　10:00</p>
+                    </div>
+                    <div class="access-info-item">
+                        <div class="access-pill">HOLIDAY</div>
+                        <p class="access-pill-text">第3水曜日 定休日<br>
+                        ※祝日の場合は営業し、翌日を振替休業とする場合がございます。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="access-info-grid">
+                <div class="access-info-block">
+                    <h4 class="access-info-title">[電車でお越しの方]</h4>
+                    <p class="access-info-text">
+                        JR中央線にて「新宿駅」から「青梅駅」まで約75分<br>
+                        青梅駅よりバスで約24分・東青梅バス停下車後・徒歩約5分です
+                    </p>
+                </div>
+                <div class="access-info-block">
+                    <h4 class="access-info-title">[提携施設]温泉&amp;サウナ</h4>
+                    <p class="access-info-text">
+                        温泉＆サウナ<br>
+                        10:00〜23:00（最終受付 22:00）
+                    </p>
+                </div>
+                <div class="access-info-block">
+                    <h4 class="access-info-title">[お車でお越しの方]</h4>
+                    <p class="access-info-text">
+                        圏央道「青梅IC」または「日の出IC」より約30〜40分。<br>
+                        提携駐車場・場内駐車場あり（普通車〇台）／「予約不要」<br>
+                        ※オートキャンプサイトをご利用の方は、サイト横付けが可能です
+                    </p>
+                </div>
+                <div class="access-info-block">
+                    <h4 class="access-info-title">[禁止事項]</h4>
+                    <p class="access-info-text">
+                        オートキャンプ（車中宿含む）・キャンプファイヤー禁止<br>
+                        ガスコンロ・SUP・火薬類・テントサウナ等の持ち込み使用禁止<br>
+                        高床式デッキでの焚き火・サバイバル焚き禁止<br>
+                        キャンプ場での花火・発砲行為禁止<br>
+                        薪での過度な直火
+                    </p>
+                </div>
+            </div>
+
+            <div class="access-map-wrap">
+                <iframe
+                    title="Access Map"
+                    src="https://www.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%A7%85&output=embed"
+                    loading="lazy"
+                    allowfullscreen=""
+                    referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conversation Section -->
+    <section class="conversation-section">
+        <div class="conversation-container">
+            <div class="conversation-left">
+                <div class="conversation-bullet">キャンプノート</div>
+                <h2 class="conversation-title serif">
+                    <span class="title-line title-line-1">Let’s have a</span>
+                    <span class="title-line title-line-2">Conversation</span>
+                </h2>
+                <div class="conversation-text">
+                    <p>ここは、キャンプの思い出や<br>ふと感じたことを、そっと残せる場所です。</p>
+                    <p>短いひとことでも、長いお話でも大丈夫。<br>自然の中で生まれた気持ちを、自由に書いてみてください。</p>
+                </div>
+            </div>
+            <div class="conversation-right">
+                <div class="conversation-arrow guestbook-arrow">
+                    <svg class="guestbook-arrow" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <marker id="arrowhead-index" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                                <polygon points="0 0, 10 3, 0 6" fill="#333333" class="arrow-head"/>
+                            </marker>
+                        </defs>
+                        <path id="arrow-path" d="M 20 70
+                        C 120 120, 280 120, 380 70"
+                              stroke="#333333" 
+                              stroke-width="3" 
+                              fill="none" 
+                              marker-end="url(#arrowhead-index)"
+                              class="arrow-draw"/>
+                    </svg>
+                </div>
+                <a class="conversation-bubble" href="guestbook.html">
+                    <span>メッセージへ</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    </div><!-- End access-conversation-wrapper -->
+
+    <!-- Footer (from guestbook) -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top-line"></div>
+            <div class="footer-logo-wrapper">
+                <a href="#" class="footer-logo">
+                    <img src="image/logo.png" alt="Logo" class="logo-img-footer">
+                </a>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <ul class="footer-links">
+                        <li><a href="#">ticket</a></li>
+                        <li><a href="#">chill</a></li>
+                        <li><a href="#">timetable</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <ul class="footer-links">
+                        <li><a href="concept.html">concept</a></li>
+                        <li><a href="#">access</a></li>
+                        <li><a href="#">home</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-icon">
+                        <svg fill="currentColor" viewBox="0 0 24 24" width="18" height="18">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <div class="x-icon">𝕏</div>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <svg fill="currentColor" viewBox="0 0 24 24" width="18" height="18">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <button class="footer-reserve-btn">
+                    <span>RESERVE</span>
+                    <span class="footer-reserve-sub">予約する</span>
+                </button>
+                
+                <button class="page-top-btn" onclick="scrollToTop()">
+                    <svg class="page-top-circle" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <path id="page-top-text-path" d="M 100,100 m -85,0 a 85,85 0 1,1 170,0 a 85,85 0 1,1 -170,0"/>
+                        </defs>
+                        <circle cx="100" cy="100" r="85" fill="none" stroke="white" stroke-width="2"/>
+                        <text class="page-top-text-rotator" fill="white" font-size="14" font-weight="700" letter-spacing="3">
+                            <textPath href="#page-top-text-path" startOffset="0%">
+                                PAGE TOP • PAGE TOP • PAGE TOP • PAGE TOP
+                            </textPath>
+                        </text>
+                        <path d="M 100 125 L 100 75 M 100 75 L 88 87 M 100 75 L 112 87"
+                              stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- News Modal -->
+    <div class="news-modal" id="newsModal">
+        <div class="news-modal-overlay"></div>
+        <div class="news-modal-container">
+            <button class="news-modal-close" aria-label="Close">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+            <div class="news-modal-content">
+                <div class="news-modal-image">
+                    <img src="" alt="News Image" id="modalNewsImage">
+                </div>
+                <div class="news-modal-body">
+                    <div class="news-modal-meta" id="modalNewsMeta"></div>
+                    <h2 class="news-modal-title serif" id="modalNewsTitle"></h2>
+                    <p class="news-modal-subtitle" id="modalNewsSubtitle"></p>
+                    <div class="news-modal-divider"></div>
+                    <p class="news-modal-desc" id="modalNewsDesc"></p>
+                    <div class="news-modal-date" id="modalNewsDate">2026.01.22</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Scroll to Top function
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+    <script src="script.js" defer></script>
+
+</body>
+</html>
+
+

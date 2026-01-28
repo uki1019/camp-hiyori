@@ -6,8 +6,8 @@
     <title>Vive Glamping | 宿泊予約</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <!-- Scroll Progress (right side girl image) -->
+<body class="ticket-page">
+ <!-- Scroll Progress (right side girl image) -->
     <div class="scroll-progress">
         <div class="scroll-progress-track">
             <div class="scroll-progress-thumb"></div>
@@ -17,9 +17,13 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar-container">
+          <!-- Logo -->
+          <a href="#" class="navbar-logo">
+            <img src="image/logo.png" alt="Logo" class="logo-img">
+          </a>
           <!-- 中间菜单 -->
           <ul class="nav-links nav-links-center">
-            <li><a href="#">concept</a></li>
+            <li><a href="concept.html">concept</a></li>
             <li><a href="#">chill</a></li>
             <li><a href="#">timetable</a></li>
             <li><a href="#">home</a></li>
@@ -40,36 +44,34 @@
         <div class="hero-content">
             <h1 class="hero-title serif">山と時間を、たのしむ。</h1>
         </div>
-        <div class="hero-overlay">
-            <div class="ticket-text-container" aria-hidden="true">
-                <svg class="circle-text" viewBox="0 0 1200 320" aria-hidden="true">
-                    <defs>
-                      <!-- 椭圆上半弧：rx 越大越“缓”，ry 越小越“平” -->
-                      <path id="circlePath" d="M 0 260 A 600 120 0 0 1 1200 260" />
-                    </defs>
-                  
-                    <text class="circle-text__text">
-                        <textPath href="#circlePath" startOffset="0%" id="ticketFlow">
-                          TICKET      TICKET      TICKET      TICKET      TICKET      TICKET      TICKET      TICKET  
-                          TICKET      TICKET      TICKET      TICKET      TICKET      TICKET      TICKET      TICKET  
-                          <animate
-                            attributeName="startOffset"
-                            from="0%"
-                            to="-100%"
-                            dur="20s"
-                            repeatCount="indefinite" />
-                        </textPath>
-                      </text>
-                      
-                  </svg>
-                  
-                  
-              </div>
-              
-    </section>
+        </section>
 
     <!-- Dark Background Wrapper -->
     <div class="dark-wrapper">
+        <!-- 顶部装饰：半圆形 + TICKET 滚动文字 -->
+        <div class="dark-wrapper-top">
+            <div class="ticket-arc-container" aria-hidden="true">
+                <svg class="ticket-arc-svg" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMax slice">
+                    <!-- 半圆形背景 -->
+                    <ellipse cx="600" cy="340" rx="700" ry="220" fill="#333333"/>
+                    <!-- 弧形文字路径 -->
+                    <defs>
+                        <path id="ticketArcPath" d="M 50 320 Q 600 80 1150 320" fill="none"/>
+                    </defs>
+                    <text class="ticket-arc-text">
+                        <textPath href="#ticketArcPath" startOffset="0%">
+                            TICKET · TICKET · TICKET · TICKET · TICKET · TICKET · TICKET · TICKET · 
+                            <animate
+                                attributeName="startOffset"
+                                from="0%"
+                                to="-50%"
+                                dur="15s"
+                                repeatCount="indefinite"/>
+                        </textPath>
+                    </text>
+                </svg>
+            </div>
+        </div>
         <!-- Filter/Search Bar -->
         <section class="filter-section">
             <div class="filter-container">
@@ -168,6 +170,11 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-top-line"></div>
+            <div class="footer-logo-wrapper">
+                <a href="#" class="footer-logo">
+                    <img src="image/logo2.png" alt="Logo" class="logo-img-footer">
+                </a>
+            </div>
             <div class="footer-grid">
                 <div class="footer-column">
                     <ul class="footer-links">
@@ -178,7 +185,7 @@
                 </div>
                 <div class="footer-column">
                     <ul class="footer-links">
-                        <li><a href="#">concept</a></li>
+                        <li><a href="concept.html">concept</a></li>
                         <li><a href="#">access</a></li>
                         <li><a href="#">home</a></li>
                     </ul>
