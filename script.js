@@ -977,8 +977,13 @@ function initThumbCardScrollRotate() {
 // ===== Section Title Scroll Animate =====
 function initServicesTitleAnimate() {
   // 选择所有需要动画的标题
-  const titles = document.querySelectorAll('.services-title, .news-heading, .access-title, .conversation-title');
-  if (!titles.length) return;
+  const titles = document.querySelectorAll('.services-title, .news-heading, .access-title, .conversation-title, .concept-tagline, .concept-section-title');
+  
+  // 选择所有需要淡入的文字和元素
+  const fadeTexts = document.querySelectorAll('.fade-in-text');
+  const fadeElements = document.querySelectorAll('.fade-in-element');
+  
+  if (!titles.length && !fadeTexts.length && !fadeElements.length) return;
 
   // 先添加 js-ready 类，启用动画准备状态
   document.body.classList.add('js-ready');
@@ -993,6 +998,8 @@ function initServicesTitleAnimate() {
   }, { threshold: 0.3 }); // 降低阈值，更快触发
 
   titles.forEach(title => observer.observe(title));
+  fadeTexts.forEach(text => observer.observe(text));
+  fadeElements.forEach(el => observer.observe(el));
 }
 
 // ===== News Modal =====
@@ -1061,8 +1068,36 @@ document.addEventListener('DOMContentLoaded', () => {
   initNewsCursorCircle(); // 初始化 News 鼠标跟随圆形
   initServicesTitleAnimate(); // Our Services 标题滚动动画
   initNewsModal(); // 初始化 News 弹窗
+  initConceptImgZoom(); // 初始化 Concept 页面图片滚动缩放
 
   if (!isGuestbookPage) init(); // init 里已经会跑 initNorthmanScrollCards()
 });
+
+// Concept page image zoom on scroll
+function initConceptImgZoom() {
+  const topImg = document.querySelector('.concept-hero-img-top img');
+  const bottomImg = document.querySelector('.concept-hero-img-bottom img');
+  
+  if (!topImg && !bottomImg) return;
+  
+  function updateZoom() {
+    const scrollTop = window.scrollY || window.pageYOffset || 0;
+    const maxScroll = 800; // 最大滚动距离
+    const maxScale = 1.15; // 最大缩放比例
+    
+    const ratio = Math.min(scrollTop / maxScroll, 1);
+    const scale = 1 + (maxScale - 1) * ratio;
+    
+    if (topImg) {
+      topImg.style.transform = `scale(${scale})`;
+    }
+    if (bottomImg) {
+      bottomImg.style.transform = `scale(${scale})`;
+    }
+  }
+  
+  window.addEventListener('scroll', updateZoom, { passive: true });
+  updateZoom(); // 初始调用
+}
 
 
