@@ -983,7 +983,10 @@ function initServicesTitleAnimate() {
   const fadeTexts = document.querySelectorAll('.fade-in-text');
   const fadeElements = document.querySelectorAll('.fade-in-element');
   
-  if (!titles.length && !fadeTexts.length && !fadeElements.length) return;
+  // 选择时间轴元素
+  const timelineItems = document.querySelectorAll('.timeline-item');
+  
+  if (!titles.length && !fadeTexts.length && !fadeElements.length && !timelineItems.length) return;
 
   // 先添加 js-ready 类，启用动画准备状态
   document.body.classList.add('js-ready');
@@ -1000,6 +1003,7 @@ function initServicesTitleAnimate() {
   titles.forEach(title => observer.observe(title));
   fadeTexts.forEach(text => observer.observe(text));
   fadeElements.forEach(el => observer.observe(el));
+  timelineItems.forEach(item => observer.observe(item));
 }
 
 // ===== News Modal =====
@@ -1069,9 +1073,45 @@ document.addEventListener('DOMContentLoaded', () => {
   initServicesTitleAnimate(); // Our Services 标题滚动动画
   initNewsModal(); // 初始化 News 弹窗
   initConceptImgZoom(); // 初始化 Concept 页面图片滚动缩放
+  initTimelineProgress(); // 初始化时间轴进度条
 
   if (!isGuestbookPage) init(); // init 里已经会跑 initNorthmanScrollCards()
 });
+
+// Timeline progress bar scroll effect
+function initTimelineProgress() {
+  const timelineContainer = document.querySelector('.timeline-container');
+  if (!timelineContainer) return;
+  
+  function updateProgress() {
+    const rect = timelineContainer.getBoundingClientRect();
+    const containerTop = rect.top;
+    const containerHeight = rect.height;
+    const windowHeight = window.innerHeight;
+    
+    // 计算进度条应该覆盖的高度
+    let progress = 0;
+    
+    if (containerTop < windowHeight * 0.5) {
+      // 从容器顶部开始计算滚动进度
+      const scrolled = (windowHeight * 0.5) - containerTop;
+      const maxScroll = containerHeight;
+      progress = Math.min(scrolled / maxScroll, 1);
+    }
+    
+    // 设置进度条高度（减去顶部和底部的偏移）
+    const progressHeight = (containerHeight - 140) * progress;
+    timelineContainer.style.setProperty('--timeline-progress', progressHeight + 'px');
+  }
+  
+  // 使用 CSS 变量来控制高度
+  const style = document.createElement('style');
+  style.textContent = '.timeline-container::after { height: var(--timeline-progress, 0); }';
+  document.head.appendChild(style);
+  
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+}
 
 // Concept page image zoom on scroll
 function initConceptImgZoom() {
