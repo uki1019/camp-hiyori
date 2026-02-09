@@ -21,11 +21,10 @@
                 <img src="image/logo.png" alt="Logo" class="logo-img">
             </a>
             <ul class="nav-links nav-links-center">
+                <li><a href="index.html">home</a></li>
                 <li><a href="concept.html" class="active">concept</a></li>
                 <li><a href="chill.html">chill</a></li>
                 <li><a href="guestbook.html">guestbook</a></li>
-                <li><a href="index.html">home</a></li>
-                <li><a href="#">access</a></li>
             </ul>
             <a href="ticket.html" class="ticket-panel" aria-label="ticket reserve">
                 <span class="ticket-title serif">ticket</span>
@@ -36,7 +35,7 @@
 
     <!-- Hero Section -->
     <section class="hero-section">
-        <img src="image/image 51.png" class="hero-image" alt="Mountain camping view">
+        <img src="image/image 93.png" class="hero-image" alt="Mountain camping view">
         <div class="hero-content">
             <h1 class="hero-title serif">山と時間を、たのしむ。</h1>
         </div>
@@ -79,19 +78,40 @@
                     </p>
                 </div>
                 
-                <!-- 右上角图片 + 点阵装饰 -->
-                <div class="concept-hero-img-top fade-in-element">
-                    <div class="concept-dots-decoration" aria-hidden="true">
-                        <div class="dots-grid"></div>
+                <!-- 双图并排布局 - 轮播 -->
+                <div class="concept-dual-images fade-in-element">
+                    <!-- 左侧大图轮播 -->
+                    <div class="concept-img-left">
+                        <div class="concept-slider-left">
+                            <img src="image/image 91.png" alt="Cabin view" class="slide-img active">
+                            <img src="image/image 89.png" alt="Terrace view" class="slide-img">
+                            <img src="image/image 90.png" alt="Observatory" class="slide-img">
+                        </div>
                     </div>
-                    <div class="concept-img-wrapper">
-                        <img src="image/image 32.jpg" alt="Mountain view">
+                    
+                    <!-- 右侧小图区域 -->
+                    <div class="concept-img-right">
+                        <div class="concept-img-right-inner">
+                            <!-- 序号和进度条 -->
+                            <div class="concept-img-number">
+                                <span class="number-text current-num">01</span>
+                                <div class="number-line">
+                                    <div class="progress-fill"></div>
+                                </div>
+                                <span class="number-text total-num">03</span>
+                            </div>
+                            <!-- 小图轮播 -->
+                            <div class="concept-img-small-wrapper">
+                                <div class="concept-slider-right">
+                                    <img src="image/image 92.png" alt="Mountain view" class="slide-img active">
+                                    <img src="image/tabe2.png" alt="Night garden" class="slide-img">
+                                    <img src="image/aso3.png" alt="Onsen" class="slide-img">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 米字装饰 -->
+                        <div class="concept-asterisk">✳</div>
                     </div>
-                </div>
-                
-                <!-- 左下角大图 -->
-                <div class="concept-hero-img-bottom fade-in-element">
-                    <img src="image/image 33.png" alt="Cabin view">
                 </div>
                 
                 <!-- 白色半圆形背景 -->
@@ -209,68 +229,50 @@
         </main>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- Footer New Style -->
+    <footer class="footer footer-redesign">
         <div class="footer-container">
-            <div class="footer-top-line"></div>
-            <div class="footer-logo-wrapper">
-                <a href="index.html" class="footer-logo">
-                    <img src="image/logo.png" alt="Logo" class="logo-img-footer">
-                </a>
-            </div>
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <ul class="footer-links">
-                        <li><a href="ticket.html">ticket</a></li>
-                        <li><a href="chill.html">chill</a></li>
-                        <li><a href="guestbook.html">guestbook</a></li>
-                    </ul>
+            <div class="footer-three-col">
+                <div class="footer-left">
+                    <a href="index.html" class="footer-logo">
+                        <img src="image/logo.png" alt="Camp Hiyori" class="logo-img-footer">
+                    </a>
+                    <div class="footer-info">
+                        <p class="footer-tel">TEL: 0428-76-2345</p>
+                        <p class="footer-address">〒198-0063 東京都青梅市梅郷4丁目12−8</p>
+                        <p class="footer-hours">Check IN 15:00 / OUT 10:00</p>
+                    </div>
+                    <p class="footer-copyright">© 2025 Camp Hiyori</p>
+                    <a href="#" class="footer-instagram">
+                        <svg fill="currentColor" viewBox="0 0 24 24" width="16" height="16"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        <span>OFFICIAL INSTAGRAM</span>
+                    </a>
                 </div>
-                <div class="footer-column">
-                    <ul class="footer-links">
-                        <li><a href="concept.html">concept</a></li>
-                        <li><a href="#">access</a></li>
-                        <li><a href="index.html">home</a></li>
-                    </ul>
+                <div class="footer-center">
+                    <div class="footer-nav-col">
+                        <a href="concept.html" class="footer-nav-item"><span class="nav-ja">コンセプト</span><span class="nav-en">CONCEPT</span></a>
+                        <a href="chill.html" class="footer-nav-item"><span class="nav-ja">過ごし方</span><span class="nav-en">CHILL</span></a>
+                        <a href="guestbook.html" class="footer-nav-item"><span class="nav-ja">ゲストブック</span><span class="nav-en">GUESTBOOK</span></a>
+                    </div>
+                    <div class="footer-nav-col">
+                        <a href="ticket.html" class="footer-nav-item"><span class="nav-ja">料金・予約</span><span class="nav-en">TICKET</span></a>
+                        <a href="index.html" class="footer-nav-item"><span class="nav-ja">ホーム</span><span class="nav-en">HOME</span></a>
+                    </div>
                 </div>
-                <div class="footer-social">
-                    <a href="#" class="social-icon">
-                        <svg fill="currentColor" viewBox="0 0 24 24" width="18" height="18">
-                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                <div class="footer-right">
+                    <a href="ticket.html" class="footer-reserve-btn-new">
+                        <span class="reserve-text"><span>RESERVE</span><span class="reserve-sub">予約する</span></span>
+                        <span class="reserve-arrow">→</span>
+                    </a>
+                    <button class="page-top-btn" onclick="scrollToTop()">
+                        <svg class="page-top-circle" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <defs><path id="page-top-text-path-concept" d="M 100,100 m -85,0 a 85,85 0 1,1 170,0 a 85,85 0 1,1 -170,0"/></defs>
+                            <circle cx="100" cy="100" r="85" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <text class="page-top-text-rotator" fill="currentColor" font-size="14" font-weight="700" letter-spacing="3"><textPath href="#page-top-text-path-concept" startOffset="0%">PAGE TOP • PAGE TOP • PAGE TOP • PAGE TOP</textPath></text>
+                            <path d="M 100 125 L 100 75 M 100 75 L 88 87 M 100 75 L 112 87" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
                         </svg>
-                    </a>
-                    <a href="#" class="social-icon">
-                        <div class="x-icon">𝕏</div>
-                    </a>
-                    <a href="#" class="social-icon">
-                        <svg fill="currentColor" viewBox="0 0 24 24" width="18" height="18">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
-                    </a>
+                    </button>
                 </div>
-            </div>
-
-            <div class="footer-bottom">
-                <button class="footer-reserve-btn" onclick="window.location.href='ticket.html'">
-                    <span>RESERVE</span>
-                    <span class="footer-reserve-sub">予約する</span>
-                </button>
-                
-                <button class="page-top-btn" onclick="scrollToTop()">
-                    <svg class="page-top-circle" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <path id="page-top-text-path-concept" d="M 100,100 m -85,0 a 85,85 0 1,1 170,0 a 85,85 0 1,1 -170,0"/>
-                        </defs>
-                        <circle cx="100" cy="100" r="85" fill="none" stroke="white" stroke-width="2"/>
-                        <text class="page-top-text-rotator" fill="white" font-size="14" font-weight="700" letter-spacing="3">
-                            <textPath href="#page-top-text-path-concept" startOffset="0%">
-                                PAGE TOP • PAGE TOP • PAGE TOP • PAGE TOP
-                            </textPath>
-                        </text>
-                        <path d="M 100 125 L 100 75 M 100 75 L 88 87 M 100 75 L 112 87"
-                              stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-                    </svg>
-                </button>
             </div>
         </div>
     </footer>
@@ -279,6 +281,55 @@
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        // 双图轮播功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const leftSlider = document.querySelector('.concept-slider-left');
+            const rightSlider = document.querySelector('.concept-slider-right');
+            const progressFill = document.querySelector('.progress-fill');
+            const currentNum = document.querySelector('.current-num');
+            
+            if (!leftSlider || !rightSlider) return;
+            
+            const leftImages = leftSlider.querySelectorAll('.slide-img');
+            const rightImages = rightSlider.querySelectorAll('.slide-img');
+            const totalSlides = leftImages.length;
+            let currentSlide = 0;
+            const slideDuration = 5000; // 5秒切换一次
+            
+            function updateSlide() {
+                // 移除所有 active
+                leftImages.forEach(img => img.classList.remove('active'));
+                rightImages.forEach(img => img.classList.remove('active'));
+                
+                // 添加当前 active
+                leftImages[currentSlide].classList.add('active');
+                rightImages[currentSlide].classList.add('active');
+                
+                // 更新序号
+                if (currentNum) {
+                    currentNum.textContent = String(currentSlide + 1).padStart(2, '0');
+                }
+                
+                // 重置并启动进度条动画
+                if (progressFill) {
+                    progressFill.classList.remove('animating');
+                    void progressFill.offsetWidth; // 触发重排
+                    progressFill.classList.add('animating');
+                }
+            }
+            
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlide();
+            }
+            
+            // 初始化
+            updateSlide();
+            
+            // 定时切换
+            setInterval(nextSlide, slideDuration);
+        });
     </script>
     <script src="script.js"></script>
 </body>

@@ -1,132 +1,262 @@
-// Room Plans Data
-const ROOM_PLANS = [
+// ===== 套餐数据 (PLANS) =====
+const PLANS = [
     {
-        id: 'standard-tent',
-        name: '小屋付きサイト',
-        subName: '特別な一棟で最高のキャンプを！',
-        description: 'キャンプ場から切り出した木材も有効利用し、至る所に手作りのやさしさとぬくもりが感じられる、特別な一棟です。',
-        price: 18000,
-        capacity: '2名',
-        image: 'image/image 41.jpg',
-        gallery: [
-            'image/image 41.jpg',
-            'image/1.jpg',
-            'image/2.jpg',
-            'image/3.jpg'
-        ],
-        tags: ['禁煙', 'ペット不可'],
-        features: ['冷蔵庫', 'Wi-Fi完備', 'エアコン'],
-        availability: 5
+        id: 'graduation',
+        name: '■期間限定■【卒業旅行応援】〈スタンダードコース〉「1泊2食BBQ付」が12,000円ぽっきり♪思い出作りにおすすめ！',
+        tag: '期間限定',
+        basePrice: 12000,
+        period: '2026/01/28 〜 2026/03/31',
+        meals: '朝夕食付',
+        image: 'image/t1.png',
+        features: ['BBQセット', 'ホットサンド朝食', '温泉無料'],
+        description: `■プラン内容■
+気軽にグランピングを楽しんでみたい方に♪
+夕食にBBQ♪朝食にホットサンドが付いた【1泊2食付☆お手軽グランピング】
+初めてのグランピングにもおすすめです♪
+
+■-宿泊特典-■
+隣接する三田天然温泉「寿ノ湯」の下記サービスをご利用いただけます。
+●【7つの湯＆サウナ】入り放題！
+●【岩盤浴＆ライブラリー】1回無料！
+●【ソフトクリーム】食べ放題！
+●【コーヒー】飲み放題！
+※利用期間／チェックイン〜チェックアウト日の22:00まで
+
+■-夕食-■
+【コース】BBQスタンダードコース　※お子様は「キッズメニュー」になります
+【場所】テント外パーソナルスペース（ウッドデッキ）にて
+　火起こし不要！調整が楽なガスタイプのBBQコンロです♪
+【時間】17:00 〜 20:00
+
+■-朝食-■
+【内容】ホットサンド（食材）、スープ、サラダ、コーヒー
+　※ホットサンドは食材をお届けします。ご自身でお作りいただき、焼きたてアツアツをお召し上がりください。
+【場所】ご宿泊テント内 or テント外パーソナルスペース（ウッドデッキ）
+【時間】7:00 〜 10:00`,
+        benefits: ['7つの湯＆サウナ入り放題', '岩盤浴1回無料', 'ソフトクリーム食べ放題']
     },
     {
-        id: 'luxury-dome',
-        name: '小屋付きサイト2',
-        subName: '夜景を独り占め！',
-        description: '前面がフルオープンすることで、とても開放的な雰囲気です。​眠りにつく瞬間まで、寝転がったまま、夜景を見ることができる素敵な小屋に仕上がりました☆',
-        price: 28000,
-        capacity: '2~4名',
+        id: 'anniversary',
+        name: '【記念日】ウェディングのパティシエが作るケーキ＆スパークリングワイン|1泊2食付|豪華オプション有♪',
+        tag: '記念日',
+        basePrice: 25000,
+        meals: '朝夕食付＋ケーキ＆ワイン',
+        image: 'image/t2.png',
+        features: ['特製ケーキ', 'スパークリングワイン', '豪華オプション'],
+        description: `■プラン内容■
+大切な記念日を、星空の下で特別に祝いませんか？
+ウェディング経験のあるパティシエが作る特製ケーキと、厳選されたスパークリングワインをご用意。
+誕生日、プロポーズ、結婚記念日など、人生の大切な瞬間を最高の空間で演出いたします。
+
+■-記念日特典-■
+●パティシエ特製ホールケーキ（12cm）
+●スパークリングワイン1本
+●メッセージプレート付き
+※オプションで花束（+3,000円）、バルーン装飾（+2,000円）も承ります
+
+■-夕食-■
+【コース】BBQプレミアムコース（厳選肉＆シーフード）
+【場所】テント外パーソナルスペース（ウッドデッキ）にて
+【時間】17:00 〜 20:00
+※ケーキはご希望の時間にお届けいたします
+
+■-朝食-■
+【内容】特製フレンチトースト、サラダ、フルーツ、コーヒー
+【場所】ご宿泊テント内 or テント外パーソナルスペース
+【時間】7:00 〜 10:00
+
+■-宿泊特典-■
+●温泉「寿ノ湯」利用無料
+●レイトチェックアウト11:00まで無料`,
+        benefits: ['温泉利用可', 'レイトチェックアウト']
+    },
+    {
+        id: 'premium',
+        name: '【プレミアムコース】＜1泊2食BBQ付＞ 骨付きラムにシーフードで極上グランピング！温泉無料♪',
+        tag: 'プレミアム',
+        basePrice: 28000,
+        meals: '朝夕食付（グレードアップ）',
+        image: 'image/t3.png',
+        features: ['骨付きラム', 'シーフード', '温泉無料'],
+        description: `■プラン内容■
+最高級の食材で、贅沢なアウトドア体験を。
+メインは柔らかくジューシーな骨付きラムと、新鮮な海の幸を豪快に焼き上げます。
+特別な日のご褒美に、ぜひお越しください。
+
+■-夕食-■
+【コース】BBQプレミアムコース
+【メニュー】
+・骨付きラムチョップ
+・有頭海老＆ホタテ＆イカのシーフード盛り合わせ
+・国産牛カルビ
+・季節の焼き野菜盛り合わせ
+・焼きおにぎり
+・デザート
+【場所】テント外パーソナルスペース（ウッドデッキ）にて
+【時間】17:00 〜 20:00
+
+■-朝食-■
+【内容】グルメブレックファスト（ベーコンエッグ、サラダ、パン、スープ、コーヒー）
+【場所】ご宿泊テント内 or テント外パーソナルスペース
+【時間】7:00 〜 10:00
+
+■-宿泊特典-■
+●温泉「寿ノ湯」入り放題
+●岩盤浴1回無料
+●ウェルカムドリンク付き`,
+        benefits: ['温泉無料', '岩盤浴1回無料']
+    },
+    {
+        id: 'group',
+        name: '★団体割★【スタンダードコース】＜1泊2食BBQ＞肉や魚介の豪華BBQとサウナで整う15000円旅♪',
+        tag: '団体割',
+        basePrice: 15000,
+        meals: '朝夕食付',
+        image: 'image/t4.png',
+        features: ['豪華BBQ', 'サウナ付き', '団体割引'],
+        description: `■プラン内容■
+4名以上のグループでお得に楽しめる団体割引プラン！
+お肉も魚介も両方楽しめる豪華BBQセットに、サウナでととのう体験もセット。
+会社の仲間、サークルの友達、ご家族で、ワイワイ楽しい時間を過ごしませんか？
+
+■-ご利用条件-■
+●4名様以上のグループでご予約ください
+●学生グループは学生証のご提示をお願いいたします
+
+■-夕食-■
+【コース】BBQスタンダードコース（肉＆魚介）
+【メニュー】
+・牛カルビ＆豚ロース
+・海老＆イカ
+・ソーセージ盛り合わせ
+・季節の野菜
+・焼きそば
+【場所】共用BBQスペース or テント外パーソナルスペース
+【時間】17:00 〜 20:00
+
+■-朝食-■
+【内容】ホットサンド、スープ、サラダ、コーヒー
+【場所】ご宿泊テント内 or テント外パーソナルスペース
+【時間】7:00 〜 10:00
+
+■-宿泊特典-■
+●温泉「寿ノ湯」入り放題
+●サウナ利用無料
+●コーヒー飲み放題`,
+        benefits: ['温泉無料', 'サウナ利用可']
+    },
+    {
+        id: 'basic',
+        name: '【ベーシックコース】＜1泊2食BBQ付＞ 可愛いテントで気軽にアウトドア満喫♪［宿泊者特典付］',
+        tag: 'ベーシック',
+        basePrice: 18000,
+        meals: '朝夕食付',
         image: 'image/1.jpg',
-        gallery: [
-            'image/1.jpg',
-            'image/2.jpg',
-            'image/3.jpg',
-            'image/image 41.jpg'
-        ],
-        tags: ['禁煙', 'ペット不可'],
-        features: ['エアコン完備', '屋外シンク', '屋外フリースペース'],
-        availability: 2
-    },
-    {
-        id: 'forest-cabin',
-        name: '森さん家',
-        subName: '森に包まれる静寂の隠れ家',
-        description: '建物横には充分な広さのウッドデッキがあります！この場所でのBBQは、最高です！また、テントやタープも設営できますので、工夫次第で大人数にも対応可。トイレはハナレサイトのトイレを使用します。（徒歩20秒程度）サウナもオプションで使えます。',
-        price: 35000,
-        capacity: '2〜4名',
-        image: 'image/2.jpg',
-        gallery: [
-            'image/2.jpg',
-            'image/3.jpg',
-            'image/1.jpg',
-            'image/image 41.jpg'
-        ],
-        tags: ['禁煙', 'ペット可'],
-        features: ['屋外フリースペース', '屋外水道', 'エアコン'],
-        availability: 3
-    },
-    {
-        id: 'premium-suite',
-        name: '天地家',
-        subName: '枕木のウッドガーデンなど手作りの優しさとぬくもりが感じられる、特別な一棟。',
-        description: 'デッキから見上げる天には星空。デッキから見下ろす地上は夜景。',
-        price: 18000,
-        capacity: '2〜4名',
-        image: 'image/3.jpg',
-        gallery: [
-            'image/3.jpg',
-            'image/2.jpg',
-            'image/1.jpg',
-            'image/image 41.jpg'
-        ],
-        tags: ['禁煙', 'ペット不可'],
-        features: ['焚き火台', '朝食用レトルト', '室内用テーブル'],
-        availability: 1
-    },
-    {
-        id: 'family-tent',
-        name: 'ファミリー・テント',
-        subName: '家族で楽しむ広々スペース',
-        description: '大きな家族やグループに最適な広々としたテント。子供たちが自由に遊べるスペースも確保されています。',
-        price: 22000,
-        capacity: '4〜6名',
-        image: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=1000',
-        gallery: [
-            'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=800',
-            'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&q=80&w=800',
-            'https://images.unsplash.com/photo-1500534314211-0a24cd03f2c0?auto=format&fit=crop&q=80&w=800',
-            'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?auto=format&fit=crop&q=80&w=800'
-        ],
-        tags: ['ファミリー', '広々'],
-        features: ['キングサイズベッド', 'キッズスペース', 'BBQセット'],
-        availability: 4
-    },
-    {
-        id: 'romantic-suite',
-        name: 'ロマンティック・スイート',
-        subName: '二人だけの特別な時間',
-        description: 'カップル向けに設計されたロマンティックな空間。特別な記念日に最適なプランです。',
-        price: 32000,
-        capacity: '2名',
-        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=1000',
-        gallery: [
-            'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=800',
-            'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=800',
-            'https://images.unsplash.com/photo-1500534314211-0a24cd03f2c0?auto=format&fit=crop&q=80&w=800',
-            'https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&q=80&w=800'
-        ],
-        tags: ['カップル', '記念日'],
-        features: ['ロマンスパッケージ', 'シャンパン', '専用デッキ'],
-        availability: 3
-    },
-    {
-        id: 'eco-lodge',
-        name: 'エコ・ロッジ',
-        subName: '環境に優しい自然体験',
-        description: '環境に配慮したエコフレンドリーなロッジ。自然と調和した持続可能な宿泊体験を提供します。',
-        price: 25000,
-        capacity: '2〜4名',
-        image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=1000',
-        gallery: [
-            'https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=800',
-            'https://images.unsplash.com/photo-1469796466635-455ede028aca?auto=format&fit=crop&q=80&w=800',
-            'https://images.unsplash.com/photo-1500534314211-0a24cd03f2c0?auto=format&fit=crop&q=80&w=800',
-            'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?auto=format&fit=crop&q=80&w=800'
-        ],
-        tags: ['エコ', '環境配慮'],
-        features: ['ソーラー発電', '雨水利用', 'オーガニック食材'],
-        availability: 6
+        features: ['BBQセット', '宿泊者特典', '初心者OK'],
+        description: `■プラン内容■
+キャンプ初心者でも安心！手ぶらで楽しめるベーシックプランです。
+可愛くておしゃれなテントで、気軽にアウトドア体験ができます。
+道具の準備や火起こしはスタッフがサポートいたしますので、初めての方も安心してお越しください。
+
+■-夕食-■
+【コース】BBQベーシックコース
+【メニュー】
+・牛カルビ
+・豚ロース
+・鶏もも肉
+・ソーセージ
+・季節の野菜
+・焼きおにぎり
+【場所】テント外パーソナルスペース（ウッドデッキ）にて
+【時間】17:00 〜 20:00
+
+■-朝食-■
+【内容】ホットサンド（食材）、スープ、サラダ、コーヒー
+【場所】ご宿泊テント内 or テント外パーソナルスペース
+【時間】7:00 〜 10:00
+
+■-宿泊特典-■
+●温泉「寿ノ湯」利用無料
+●ソフトクリーム食べ放題
+●コーヒー飲み放題
+
+■-ドリンクチョイス-■
+下記よりお選びいただけます
+【1】フリードリンク（アルコール＆ソフトドリンク）1,650円
+【2】フリードリンク（ソフトドリンクのみ）880円
+【3】フリードリンク（ソフトドリンクのみ・お子様）440円
+【4】管理棟にてご自身で購入 お申込み0円`,
+        benefits: ['温泉利用可', '宿泊者特典付']
     }
 ];
+
+// ===== 房型数据 (ROOMS) =====
+const ROOMS = [
+    {
+        id: 'cottage-1',
+        name: '【小屋付きサイト】-スタンダード-／Wi-Fi／携帯充電可',
+        priceModifier: 0,
+        capacity: '2〜4名様',
+        image: 'image/tw1.png',
+        gallery: ['image/tw1.png', 'image/tw2.png', 'image/tw3.png'],
+        description: 'キャンプ場から切り出した木材を使用した、手作りの温もりを感じる特別な一棟。',
+        tags: ['可愛さ優先'],
+        features: ['冷蔵庫', 'Wi-Fi', 'エアコン']
+    },
+    {
+        id: 'cottage-2',
+        name: '【小屋付きサイト2】-デラックス-／Wi-Fi／携帯充電可',
+        priceModifier: 3000,
+        capacity: '2〜5名様',
+        image: 'image/tw4.png',
+        gallery: ['image/tw4.png', 'image/tw5.png', 'image/tw6.png'],
+        description: '前面がフルオープンで開放的。寝転がったまま夜景を楽しめる素敵な小屋です。',
+        tags: ['可愛さ優先', '広さ優先'],
+        features: ['エアコン', '屋外シンク', '屋外フリースペース']
+    },
+    {
+        id: 'forest',
+        name: '【森さん家】プレミアムドーム／Wi-Fi／携帯充電可',
+        priceModifier: 5000,
+        capacity: '2〜6名様',
+        image: 'image/tw7.png',
+        gallery: ['image/tw7.png', 'image/tw8.png', 'image/tw9.png'],
+        description: '広々としたウッドデッキ付き。テントやタープも設営可能で大人数にも対応。サウナもオプションで利用可。',
+        tags: ['広さ優先', '居心地優先'],
+        features: ['屋外フリースペース', '屋外水道', 'エアコン']
+    },
+    {
+        id: 'tenchi',
+        name: '【天地家】星空ビューサイト／Wi-Fi／携帯充電可',
+        priceModifier: 2000,
+        capacity: '2〜4名様',
+        image: 'image/tw10.png',
+        gallery: ['image/tw10.png', 'image/tw11.png', 'image/tw12.png'],
+        description: 'デッキから見上げる天には星空、見下ろす地上は夜景。手作りの優しさとぬくもりが感じられる特別な一棟。',
+        tags: ['居心地優先'],
+        features: ['焚き火台', '室内テーブル', 'エアコン']
+    }
+];
+
+// ===== 选择状态 =====
+let selectedPlan = null;
+let selectedRoom = null;
+let guestCount = 2; // 默认2人
+
+// 旧数据保留用于兼容
+const ROOM_PLANS = PLANS.map(p => ({
+    id: p.id,
+    name: p.name,
+    subName: p.description,
+    description: p.description,
+    price: p.basePrice,
+    capacity: '2〜4名',
+    image: p.image,
+    gallery: [p.image],
+    tags: [p.tag, p.meals],
+    features: p.features,
+    availability: 5
+}));
 
 // Booking State
 let booking = {
@@ -136,7 +266,390 @@ let booking = {
     children: 0
 };
 
-// Create Room Card HTML
+// Current Step State
+let currentStep = 1;
+
+// ===== Step Control Functions =====
+function goToStep(step) {
+    currentStep = step;
+    
+    // Update step indicators
+    document.querySelectorAll('.step').forEach((el, idx) => {
+        el.classList.remove('active', 'completed');
+        if (idx + 1 < step) el.classList.add('completed');
+        if (idx + 1 === step) el.classList.add('active');
+    });
+    
+    // Show/hide sections
+    document.querySelectorAll('.booking-section').forEach(section => {
+        section.classList.remove('active');
+    });
+    const activeSection = document.getElementById(`step${step}-section`);
+    if (activeSection) activeSection.classList.add('active');
+    
+    // Update button text
+    updateNextButton();
+    
+    // Scroll to top of main content
+    window.scrollTo({ top: 300, behavior: 'smooth' });
+}
+
+function handleNextStep() {
+    if (currentStep === 1 && selectedPlan) {
+        goToStep(2);
+    } else if (currentStep === 2 && selectedRoom) {
+        goToStep(3);
+        renderBookingSummary();
+    } else if (currentStep === 3) {
+        // Final confirmation - could redirect or show modal
+        alert('ご予約ありがとうございます！');
+    }
+}
+
+function updateNextButton() {
+    const btn = document.getElementById('next-step-btn');
+    const btnText = document.getElementById('next-btn-text');
+    
+    if (currentStep === 1) {
+        btn.disabled = !selectedPlan;
+        btnText.textContent = selectedPlan ? 'お部屋を選ぶ' : 'プランを選択';
+    } else if (currentStep === 2) {
+        btn.disabled = !selectedRoom;
+        btnText.textContent = selectedRoom ? '予約確認へ' : 'お部屋を選択';
+    } else if (currentStep === 3) {
+        btn.disabled = false;
+        btnText.textContent = '予約を確定する';
+    }
+}
+
+function updatePriceBar() {
+    const planNameEl = document.getElementById('selected-plan-name');
+    const roomNameEl = document.getElementById('selected-room-name');
+    const totalPriceEl = document.getElementById('total-price');
+    
+    if (selectedPlan) {
+        planNameEl.textContent = selectedPlan.name;
+        
+        // 计算总价：套餐价格 × 人数 + 房型追加
+        let total = selectedPlan.basePrice * guestCount;
+        if (selectedRoom) {
+            roomNameEl.textContent = '+ ' + selectedRoom.name + ` (${guestCount}名様)`;
+            total += selectedRoom.priceModifier;
+        } else {
+            roomNameEl.textContent = `(${guestCount}名様)`;
+        }
+        
+        totalPriceEl.textContent = '¥' + total.toLocaleString();
+    } else {
+        planNameEl.textContent = 'プランを選択してください';
+        roomNameEl.textContent = '';
+        totalPriceEl.textContent = '¥--';
+    }
+    
+    updateNextButton();
+}
+
+// ===== Plan Card Rendering =====
+function createPlanCard(plan) {
+    const isSelected = selectedPlan && selectedPlan.id === plan.id;
+    
+    // 根据 tag 设置不同的颜色 class
+    let tagClass = '';
+    if (plan.tag === '期間限定') tagClass = 'limited';
+    else if (plan.tag === '記念日') tagClass = 'anniversary';
+    else if (plan.tag === 'プレミアム') tagClass = 'premium';
+    else if (plan.tag === '団体割') tagClass = 'group';
+    else if (plan.tag === 'ベーシック') tagClass = 'basic';
+    
+    const featuresHTML = plan.features.slice(0, 3).map(f => 
+        `<span class="plan-card-feature">${f}</span>`
+    ).join('');
+    
+    // 解析详情内容为结构化 HTML
+    const detailHTML = parseDetailContent(plan.description);
+    
+    return `
+        <div class="plan-card ${isSelected ? 'selected' : ''}" data-plan-id="${plan.id}">
+            <img src="${plan.image}" alt="${plan.name}" class="plan-card-image" onclick="selectPlan('${plan.id}')">
+            <div class="plan-card-content">
+                <div class="plan-card-top" onclick="selectPlan('${plan.id}')">
+                    <div class="plan-card-info">
+                        <span class="plan-card-tag ${tagClass}">${plan.tag}</span>
+                        <h3 class="plan-card-name">${plan.name}</h3>
+                        <p class="plan-card-meals">${plan.meals}</p>
+                        <div class="plan-card-features">${featuresHTML}</div>
+                    </div>
+                    <div class="plan-card-price">
+                        <span class="plan-card-price-amount">¥${plan.basePrice.toLocaleString()}</span>
+                        <span class="plan-card-price-suffix">〜 / 1名様</span>
+                    </div>
+                </div>
+                <button class="plan-card-toggle" onclick="togglePlanDetail(event, '${plan.id}')">
+                    <span>詳細を見る</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </button>
+                <div class="plan-card-details">
+                    ${detailHTML}
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// 解析详情内容为结构化 HTML
+function parseDetailContent(description) {
+    if (!description) return '';
+    
+    // 按 ■ 分割成各个区块
+    const sections = description.split(/■-?([^■]+)-?■/).filter(s => s.trim());
+    let html = '';
+    
+    for (let i = 0; i < sections.length; i += 2) {
+        const title = sections[i]?.trim();
+        const content = sections[i + 1]?.trim();
+        
+        if (!title || !content) continue;
+        
+        html += `<div class="plan-detail-section">`;
+        html += `<h4 class="plan-detail-title">${title}</h4>`;
+        
+        // 解析内容行
+        const lines = content.split('\n').filter(l => l.trim());
+        let hasRows = false;
+        
+        lines.forEach(line => {
+            line = line.trim();
+            if (!line) return;
+            
+            // 检查是否是【标签】格式
+            const labelMatch = line.match(/^【([^】]+)】(.*)$/);
+            if (labelMatch) {
+                hasRows = true;
+                const label = labelMatch[1];
+                const value = labelMatch[2].trim();
+                html += `
+                    <div class="plan-detail-row">
+                        <span class="plan-detail-label">${label}</span>
+                        <span class="plan-detail-value">${value}</span>
+                    </div>
+                `;
+            } else if (line.startsWith('●')) {
+                // 列表项
+                html += `<div class="plan-detail-item">${line}</div>`;
+            } else if (line.startsWith('※') || line.startsWith('　')) {
+                // 注释
+                html += `<div class="plan-detail-note">${line}</div>`;
+            } else if (!hasRows) {
+                // 普通文本
+                html += `<p class="plan-detail-text">${line}</p>`;
+            }
+        });
+        
+        html += `</div>`;
+    }
+    
+    return html;
+}
+
+// 展开/收起详情
+function togglePlanDetail(event, planId) {
+    event.stopPropagation();
+    const card = document.querySelector(`.plan-card[data-plan-id="${planId}"]`);
+    if (card) {
+        card.classList.toggle('expanded');
+        const btn = card.querySelector('.plan-card-toggle span');
+        if (card.classList.contains('expanded')) {
+            btn.textContent = '詳細を閉じる';
+        } else {
+            btn.textContent = '詳細を見る';
+        }
+    }
+}
+
+function renderPlanCards() {
+    const container = document.getElementById('plan-list');
+    if (!container) return;
+    container.innerHTML = PLANS.map(plan => createPlanCard(plan)).join('');
+}
+
+function selectPlan(planId) {
+    selectedPlan = PLANS.find(p => p.id === planId);
+    selectedRoom = null; // Reset room selection
+    renderPlanCards();
+    renderRoomCardsNew();
+    updatePriceBar();
+}
+
+// ===== Room Card Rendering (New) =====
+function createRoomCardNew(room) {
+    const isSelected = selectedRoom && selectedRoom.id === room.id;
+    const modifierClass = room.priceModifier === 0 ? 'free' : '';
+    const priceDisplay = room.priceModifier === 0 
+        ? '0' 
+        : room.priceModifier.toLocaleString();
+    
+    const tagsHTML = room.tags.map(t => 
+        `<span class="room-card-new-tag">【${t}】</span>`
+    ).join('');
+    
+    // 生成多张图片（使用同一张图片模拟，实际可以用 gallery）
+    const images = room.gallery || [room.image, room.image, room.image];
+    const imagesHTML = images.slice(0, 3).map(img => `
+        <div class="room-card-new-image-wrap">
+            <img src="${img}" alt="${room.name}" class="room-card-new-image">
+            <span class="room-card-new-image-zoom">
+                <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            </span>
+        </div>
+    `).join('');
+    
+    return `
+        <div class="room-card-new ${isSelected ? 'selected' : ''}" onclick="selectRoom('${room.id}')">
+            <div class="room-card-new-header">
+                <span class="room-card-new-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l-5.5 9h11L12 2zm0 3.84L13.93 9h-3.87L12 5.84zM17.5 13c-2.49 0-4.5 2.01-4.5 4.5s2.01 4.5 4.5 4.5 4.5-2.01 4.5-4.5-2.01-4.5-4.5-4.5zm0 7c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM3 21.5h8v-8H3v8zm2-6h4v4H5v-4z"/></svg>
+                </span>
+                <h3 class="room-card-new-name">${room.name}</h3>
+            </div>
+            <div class="room-card-new-body">
+                <div class="room-card-new-tags">${tagsHTML}</div>
+                <div class="room-card-new-images">
+                    ${imagesHTML}
+                </div>
+                <div class="room-card-new-right">
+                    <div class="room-card-new-price-info">
+                        <p class="room-card-new-price-label">追加料金</p>
+                        <div class="room-card-new-price">
+                            <span class="room-card-new-modifier ${modifierClass}">${priceDisplay}</span>
+                            <span class="room-card-new-yen">円</span>
+                            <span class="room-card-new-suffix">〜</span>
+                        </div>
+                    </div>
+                    <button class="room-card-new-btn">
+                        <span>${isSelected ? '選択中' : '選択する'}</span>
+                        <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                    </button>
+                </div>
+            </div>
+            <p class="room-card-new-capacity">定員: ${room.capacity}</p>
+        </div>
+    `;
+}
+
+function renderRoomCardsNew() {
+    const container = document.getElementById('room-list');
+    if (!container) return;
+    container.innerHTML = ROOMS.map(room => createRoomCardNew(room)).join('');
+}
+
+function selectRoom(roomId) {
+    selectedRoom = ROOMS.find(r => r.id === roomId);
+    renderRoomCardsNew();
+    updatePriceBar();
+}
+
+// ===== Booking Summary =====
+function renderBookingSummary() {
+    const container = document.getElementById('booking-summary');
+    if (!container || !selectedPlan || !selectedRoom) return;
+    
+    const planTotal = selectedPlan.basePrice * guestCount;
+    const roomTotal = selectedRoom.priceModifier;
+    const grandTotal = planTotal + roomTotal;
+    
+    container.innerHTML = `
+        <h3 class="summary-title">ご予約内容</h3>
+        
+        <!-- 人数選択 -->
+        <div class="summary-section">
+            <h4 class="summary-section-title">ご利用人数</h4>
+            <div class="guest-selector">
+                <button class="guest-btn" onclick="updateGuestCount(-1)" ${guestCount <= 1 ? 'disabled' : ''}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14"/>
+                    </svg>
+                </button>
+                <div class="guest-count">
+                    <span class="guest-count-number">${guestCount}</span>
+                    <span class="guest-count-label">名様</span>
+                </div>
+                <button class="guest-btn" onclick="updateGuestCount(1)" ${guestCount >= 6 ? 'disabled' : ''}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M5 12h14"/>
+                    </svg>
+                </button>
+            </div>
+            <p class="guest-note">※ お部屋の定員: ${selectedRoom.capacity}</p>
+        </div>
+        
+        <!-- プラン情報 -->
+        <div class="summary-section">
+            <h4 class="summary-section-title">プラン情報</h4>
+            <div class="summary-row">
+                <span class="summary-label">プラン</span>
+                <span class="summary-value summary-value-small">${selectedPlan.name}</span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">お食事</span>
+                <span class="summary-value">${selectedPlan.meals}</span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">お部屋</span>
+                <span class="summary-value summary-value-small">${selectedRoom.name}</span>
+            </div>
+        </div>
+        
+        <!-- 料金明細 -->
+        <div class="summary-section summary-section-price">
+            <h4 class="summary-section-title">料金明細</h4>
+            <div class="summary-price-row">
+                <span class="summary-price-label">プラン料金</span>
+                <span class="summary-price-calc">¥${selectedPlan.basePrice.toLocaleString()} × ${guestCount}名</span>
+                <span class="summary-price-value">¥${planTotal.toLocaleString()}</span>
+            </div>
+            <div class="summary-price-row">
+                <span class="summary-price-label">お部屋追加料金</span>
+                <span class="summary-price-calc"></span>
+                <span class="summary-price-value">${roomTotal === 0 ? '¥0' : '+¥' + roomTotal.toLocaleString()}</span>
+            </div>
+            <div class="summary-price-total">
+                <span class="summary-price-total-label">合計（税込）</span>
+                <span class="summary-price-total-value">¥${grandTotal.toLocaleString()}</span>
+            </div>
+        </div>
+        
+        <button class="confirm-btn" onclick="handleNextStep()">
+            <span>予約を確定する</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+        </button>
+    `;
+    
+    // 更新底部价格栏
+    updatePriceBar();
+}
+
+// 更新人数
+function updateGuestCount(delta) {
+    const newCount = guestCount + delta;
+    if (newCount >= 1 && newCount <= 6) {
+        guestCount = newCount;
+        renderBookingSummary();
+    }
+}
+
+// ===== Initialize Booking Page =====
+function initBookingPage() {
+    renderPlanCards();
+    renderRoomCardsNew();
+    updatePriceBar();
+    goToStep(1);
+}
+
+// Create Room Card HTML (Legacy)
 function createRoomCard(plan) {
     const galleryImages = (plan.gallery && plan.gallery.length)
         ? plan.gallery
@@ -186,7 +699,7 @@ function createRoomCard(plan) {
                             <p class="room-price">¥${plan.price.toLocaleString()}</p>
                         </div>
                     </div>
-                    <p class="room-description">${plan.description}</p>
+                    <p class="room-description">${plan.description.replace(/\n/g, '<br>')}</p>
                     <div class="room-features">
                         <div class="room-feature-item">
                             <div class="room-feature-icon">
@@ -986,7 +1499,13 @@ function initServicesTitleAnimate() {
   // 选择时间轴元素
   const timelineItems = document.querySelectorAll('.timeline-item');
   
-  if (!titles.length && !fadeTexts.length && !fadeElements.length && !timelineItems.length) return;
+  // 选择带层次动画的卡片
+  const fadeCards = document.querySelectorAll('.fade-in-card');
+  
+  // 选择箭头动画元素
+  const arrowElements = document.querySelectorAll('.guestbook-arrow');
+  
+  if (!titles.length && !fadeTexts.length && !fadeElements.length && !timelineItems.length && !fadeCards.length && !arrowElements.length) return;
 
   // 先添加 js-ready 类，启用动画准备状态
   document.body.classList.add('js-ready');
@@ -1004,6 +1523,22 @@ function initServicesTitleAnimate() {
   fadeTexts.forEach(text => observer.observe(text));
   fadeElements.forEach(el => observer.observe(el));
   timelineItems.forEach(item => observer.observe(item));
+  fadeCards.forEach(card => observer.observe(card));
+  arrowElements.forEach(arrow => observer.observe(arrow));
+  
+  // Footer 滚动显示
+  const footer = document.querySelector('.footer');
+  if (footer) {
+    const footerObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          footerObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    footerObserver.observe(footer);
+  }
 }
 
 // ===== News Modal =====
@@ -1063,6 +1598,7 @@ function initNewsModal() {
 // Run when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   const isGuestbookPage = document.body.classList.contains('guestbook-page');
+  const isTicketPage = document.body.classList.contains('ticket-page');
 
   initNavbarHideOnScroll();
   initMessageForm();
@@ -1074,9 +1610,53 @@ document.addEventListener('DOMContentLoaded', () => {
   initNewsModal(); // 初始化 News 弹窗
   initConceptImgZoom(); // 初始化 Concept 页面图片滚动缩放
   initTimelineProgress(); // 初始化时间轴进度条
+  initExperienceCarousel(); // 初始化体验轮播
+
+  // 初始化 Ticket 预订页面
+  if (isTicketPage) {
+    initBookingPage();
+  }
 
   if (!isGuestbookPage) init(); // init 里已经会跑 initNorthmanScrollCards()
 });
+
+// Experience Carousel
+function initExperienceCarousel() {
+  const carousels = document.querySelectorAll('.experience-carousel');
+  
+  carousels.forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    const cards = carousel.querySelectorAll('.carousel-card');
+    const prevBtn = carousel.querySelector('.carousel-prev');
+    const nextBtn = carousel.querySelector('.carousel-next');
+    
+    if (!track || !cards.length || !prevBtn || !nextBtn) return;
+    
+    let currentIndex = 0;
+    const cardWidth = cards[0].offsetWidth + 30; // card width + gap
+    const maxIndex = cards.length - 1;
+    
+    function updateCarousel() {
+      track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    }
+    
+    prevBtn.addEventListener('click', () => {
+      currentIndex = Math.max(0, currentIndex - 1);
+      updateCarousel();
+    });
+    
+    nextBtn.addEventListener('click', () => {
+      currentIndex = Math.min(maxIndex, currentIndex + 1);
+      updateCarousel();
+    });
+    
+    // Recalculate on resize
+    window.addEventListener('resize', () => {
+      const newCardWidth = cards[0].offsetWidth + 30;
+      track.style.transform = `translateX(-${currentIndex * newCardWidth}px)`;
+    });
+  });
+}
 
 // Timeline progress bar scroll effect
 function initTimelineProgress() {
