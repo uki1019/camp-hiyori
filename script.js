@@ -381,7 +381,7 @@ function createPlanCard(plan) {
                     </div>
                     <div class="plan-card-price">
                         <span class="plan-card-price-amount">¥${plan.basePrice.toLocaleString()}</span>
-                        <span class="plan-card-price-suffix">〜 / 1名様</span>
+                        <span class="plan-card-price-suffix">〜 / 2名様</span>
                     </div>
                 </div>
                 <button class="plan-card-toggle" onclick="togglePlanDetail(event, '${plan.id}')">

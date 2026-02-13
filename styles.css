@@ -125,7 +125,7 @@ body.guestbook-page {
     top: 0;
     left: 0;
     width: 100%;
-    height: 90px;
+    height: 70px;
     background: #fff;
     z-index: 999;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -147,7 +147,7 @@ body.guestbook-page {
 
 /* 不同页面的圆形颜色 */
 body.index-page .navbar::before {
-    background: #c4cfc4; /* 粉色 - index 页面 */
+    background: #b8d4e3; /* 蓝色 - index 页面 */
 }
 
 body.ticket-page .navbar::before {
@@ -178,8 +178,8 @@ body.concept-page .navbar::before {
   /* Navbar Logo */
   .navbar-logo {
     position: absolute;
-    left: 20px;
-    top: 50%;
+    left: 17px;
+    top: 65%;
     transform: translateY(-40%);
     display: flex;
     align-items: center;
@@ -196,7 +196,7 @@ body.concept-page .navbar::before {
   .nav-links-center {
     position: absolute;
     top: 50%;
-    left: 60%;
+    left: 68%;
     transform: translate(-50%, -50%);
     display: flex;
     gap: 48px;
@@ -208,10 +208,29 @@ body.concept-page .navbar::before {
     color: #111;
     text-decoration: none;
     letter-spacing: 0.02em;
+    position: relative;
+    padding-bottom: 8px;
+  }
+  
+  .nav-links-center a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    width: 6px;
+    height: 6px;
+    background: #111;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+  
+  .nav-links-center a:hover::after {
+    transform: translateX(-50%) scale(1);
   }
   
   .nav-links-center a:hover {
-    opacity: 0.7;
+    opacity: 1;
   }
   
   /* 右上角 ticket 块 */
@@ -233,14 +252,55 @@ body.concept-page .navbar::before {
     gap: 10px;
   
     text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .ticket-panel::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease;
+  }
+  
+  .ticket-panel:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .ticket-panel:hover {
+    background: #4a504a;
   }
   
   .ticket-title {
     font-size: 52px;
     line-height: 1;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .ticket-panel:hover .ticket-title {
+    transform: translateY(-3px);
   }
   
   .ticket-sub {
+    transition: transform 0.3s ease, letter-spacing 0.3s ease;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .ticket-panel:hover .ticket-sub {
+    letter-spacing: 0.1em;
+  }
+  
+  .ticket-sub-text {
     font-size: 18px;
     letter-spacing: 0.08em;
     opacity: 0.9;
@@ -280,6 +340,8 @@ body.concept-page .navbar::before {
     background: #111827;
     overflow: hidden;
     z-index: 1;
+    margin-top: -20px;
+    padding-top: 20px;
 }
 
 .hero-image {
@@ -2573,7 +2635,60 @@ body.guestbook-page .navbar {
 .guestbook-hero-content {
     max-width: 1280px;
     margin: 0 auto;
-    padding-top: 50px; 
+    padding-top: 50px;
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+.guestbook-hero-left {
+    flex: 1;
+}
+
+.guestbook-hero-right {
+    flex: 0 0 auto;
+    max-width: 350px;
+}
+
+.guestbook-hero-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    opacity: 0;
+    transform: translateX(30px) rotate(3deg);
+    animation: guestbookImgFloat 3s ease-in-out infinite, guestbookImgFadeIn 0.8s ease forwards 0.3s;
+}
+
+@keyframes guestbookImgFadeIn {
+    to {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg);
+    }
+}
+
+@keyframes guestbookImgFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.guestbook-hero-right:hover .guestbook-hero-img {
+    transform: scale(1.03) rotate(-2deg);
+    transition: transform 0.4s ease;
+}
+
+@media (max-width: 900px) {
+    .guestbook-hero-content {
+        flex-direction: column;
+    }
+    
+    .guestbook-hero-right {
+        max-width: 280px;
+        margin: 0 auto;
+    }
 }
 
 .guestbook-title {
@@ -3705,6 +3820,75 @@ body.ticket-page .hero-title {
     align-items: flex-start;
 }
 
+/* 竖排宣传语样式 */
+.hero-vertical-slogans {
+    position: absolute;
+    right: 10%;
+    top: 30%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    z-index: 30;
+}
+
+.vertical-slogan-item {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px 14px;
+    border-radius: 30px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 1.1rem;
+    color: #333;
+    letter-spacing: 0.15em;
+    line-height: 1.6;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: sloganFadeIn 0.8s ease forwards;
+}
+
+.vertical-slogan-item:nth-child(1) {
+    animation-delay: 0.5s;
+    height: fit-content;
+}
+
+.vertical-slogan-item:nth-child(2) {
+    animation-delay: 0.8s;
+    margin-top: 80px;
+}
+
+@keyframes sloganFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.vertical-slogan-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+    .hero-vertical-slogans {
+        right: 3%;
+        gap: 12px;
+    }
+    
+    .vertical-slogan-item {
+        font-size: 0.95rem;
+        padding: 16px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-vertical-slogans {
+        display: none;
+    }
+}
+
 .index-hero-image {
     width: 100%;
     height: auto;
@@ -3770,19 +3954,19 @@ body.ticket-page .hero-title {
 }
 
 .index-text-column.fade-in-text:nth-child(1) {
-    transition-delay: 0s;
+    transition-delay: 0.45s;
 }
 
 .index-text-column.fade-in-text:nth-child(2) {
-    transition-delay: 0.15s;
-}
-
-.index-text-column.fade-in-text:nth-child(3) {
     transition-delay: 0.3s;
 }
 
+.index-text-column.fade-in-text:nth-child(3) {
+    transition-delay: 0.15s;
+}
+
 .index-text-column.fade-in-text:nth-child(4) {
-    transition-delay: 0.45s;
+    transition-delay: 0s;
 }
 
 .index-text-column p {
@@ -5810,8 +5994,8 @@ body.chill-page .timeline-title .title-line {
 }
 
 .timeline-item:nth-child(even) .timeline-time {
-    justify-self: start;
-    text-align: left;
+    justify-self: end;
+    text-align: right;
 }
 
 .timeline-item:nth-child(even) .timeline-content {
