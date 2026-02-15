@@ -4936,7 +4936,15 @@ body.js-ready .news-heading .title-line {
 }
 
 .news-item{
-  padding: 48px 0;
+  padding: 0 120px 48px;
+  margin: 0 -120px;
+  border-radius: 16px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-item:hover {
+  background-color: rgba(126, 132, 127, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .news-top-line{
