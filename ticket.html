@@ -140,6 +140,11 @@
                 <div class="step-line"></div>
                 <div class="step step-3" data-step="3">
                     <span class="step-number">3</span>
+                    <span class="step-label">お客様情報</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step step-4" data-step="4">
+                    <span class="step-number">4</span>
                     <span class="step-label">予約確認</span>
                 </div>
             </div>
@@ -176,18 +181,69 @@
                 </div>
             </section>
 
-            <!-- Step 3: Confirmation -->
+            <!-- Step 3: Customer Information -->
             <section id="step3-section" class="booking-section">
                 <div class="section-header">
-                    <h2 class="section-title serif">Step 3<br/>予約確認</h2>
+                    <h2 class="section-title serif">Step 3<br/>お客様情報</h2>
                     <p class="section-description">
-                        ご予約内容をご確認ください。
+                        ご予約に必要なお客様情報をご入力ください。
                     </p>
                     <button class="back-btn" onclick="goToStep(2)">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M15 18l-6-6 6-6"/>
                         </svg>
                         お部屋選択に戻る
+                    </button>
+                </div>
+                <div class="customer-info-form">
+                    <div class="form-group">
+                        <label for="customer-name">お名前 <span class="required">*</span></label>
+                        <input type="text" id="customer-name" placeholder="山田 太郎" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-kana">フリガナ <span class="required">*</span></label>
+                        <input type="text" id="customer-kana" placeholder="ヤマダ タロウ" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="customer-phone">電話番号 <span class="required">*</span></label>
+                            <input type="tel" id="customer-phone" placeholder="090-1234-5678" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customer-email">メールアドレス <span class="required">*</span></label>
+                            <input type="email" id="customer-email" placeholder="example@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-address">ご住所</label>
+                        <input type="text" id="customer-address" placeholder="東京都渋谷区...">
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-requests">ご要望・備考</label>
+                        <textarea id="customer-requests" rows="4" placeholder="アレルギーや特別なご要望がございましたらご記入ください。"></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="agree-terms" required>
+                            <span><a href="#" target="_blank">利用規約</a>と<a href="#" target="_blank">プライバシーポリシー</a>に同意する <span class="required">*</span></span>
+                        </label>
+                    </div>
+                    <button class="next-step-btn" onclick="handleNextStep()">確認画面へ進む</button>
+                </div>
+            </section>
+
+            <!-- Step 4: Confirmation -->
+            <section id="step4-section" class="booking-section">
+                <div class="section-header">
+                    <h2 class="section-title serif">Step 4<br/>予約確認</h2>
+                    <p class="section-description">
+                        ご予約内容をご確認ください。
+                    </p>
+                    <button class="back-btn" onclick="goToStep(3)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                        お客様情報に戻る
                     </button>
                 </div>
                 <div id="booking-summary" class="booking-summary">

@@ -299,11 +299,68 @@ function handleNextStep() {
         goToStep(2);
     } else if (currentStep === 2 && selectedRoom) {
         goToStep(3);
-        renderBookingSummary();
     } else if (currentStep === 3) {
+        // Validate customer info before proceeding
+        if (validateCustomerInfo()) {
+            goToStep(4);
+            renderBookingSummary();
+        }
+    } else if (currentStep === 4) {
         // Final confirmation - could redirect or show modal
         alert('ご予約ありがとうございます！');
     }
+}
+
+function validateCustomerInfo() {
+    const name = document.getElementById('customer-name').value.trim();
+    const kana = document.getElementById('customer-kana').value.trim();
+    const phone = document.getElementById('customer-phone').value.trim();
+    const email = document.getElementById('customer-email').value.trim();
+    const agreeTerms = document.getElementById('agree-terms').checked;
+    
+    if (!name) {
+        alert('お名前を入力してください。');
+        document.getElementById('customer-name').focus();
+        return false;
+    }
+    if (!kana) {
+        alert('フリガナを入力してください。');
+        document.getElementById('customer-kana').focus();
+        return false;
+    }
+    if (!phone) {
+        alert('電話番号を入力してください。');
+        document.getElementById('customer-phone').focus();
+        return false;
+    }
+    if (!email) {
+        alert('メールアドレスを入力してください。');
+        document.getElementById('customer-email').focus();
+        return false;
+    }
+    // Simple email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('正しいメールアドレスを入力してください。');
+        document.getElementById('customer-email').focus();
+        return false;
+    }
+    if (!agreeTerms) {
+        alert('利用規約とプライバシーポリシーに同意してください。');
+        return false;
+    }
+    return true;
+}
+
+function getCustomerInfo() {
+    return {
+        name: document.getElementById('customer-name').value.trim(),
+        kana: document.getElementById('customer-kana').value.trim(),
+        phone: document.getElementById('customer-phone').value.trim(),
+        email: document.getElementById('customer-email').value.trim(),
+        address: document.getElementById('customer-address').value.trim(),
+        requests: document.getElementById('customer-requests').value.trim()
+    };
 }
 
 function updateNextButton() {
@@ -315,8 +372,11 @@ function updateNextButton() {
         btnText.textContent = selectedPlan ? 'お部屋を選ぶ' : 'プランを選択';
     } else if (currentStep === 2) {
         btn.disabled = !selectedRoom;
-        btnText.textContent = selectedRoom ? '予約確認へ' : 'お部屋を選択';
+        btnText.textContent = selectedRoom ? 'お客様情報へ' : 'お部屋を選択';
     } else if (currentStep === 3) {
+        btn.disabled = false;
+        btnText.textContent = '確認画面へ';
+    } else if (currentStep === 4) {
         btn.disabled = false;
         btnText.textContent = '予約を確定する';
     }

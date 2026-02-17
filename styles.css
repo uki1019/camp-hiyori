@@ -785,6 +785,116 @@ body.concept-page .navbar::before {
     margin-bottom: 40px;
 }
 
+/* Customer Info Form Styles */
+.customer-info-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.form-group label .required {
+    color: #ff6b6b;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.checkbox-group {
+    margin-top: 32px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    accent-color: #7E847F;
+}
+
+.checkbox-label a {
+    color: #a8c5da;
+    text-decoration: underline;
+}
+
+.checkbox-label a:hover {
+    color: #fff;
+}
+
+.next-step-btn {
+    width: 100%;
+    margin-top: 32px;
+    padding: 18px 32px;
+    background: #7E847F;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.next-step-btn:hover {
+    background: #6a706b;
+    transform: translateY(-2px);
+}
+
 .back-btn {
     display: inline-flex;
     align-items: center;
@@ -1741,6 +1851,16 @@ body.ticket-page .price-bar {
 
 .summary-row:last-child {
     border-bottom: none;
+}
+
+.summary-row-requests {
+    flex-direction: column;
+    gap: 8px;
+}
+
+.summary-row-requests .summary-value {
+    white-space: pre-wrap;
+    line-height: 1.6;
 }
 
 .summary-label {
