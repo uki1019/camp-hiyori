@@ -306,7 +306,26 @@ body.concept-page .navbar::before {
     opacity: 0.9;
   }
   
-/* 响应式：小屏时缩小间距和字号（完整规则见文件末尾 Responsive 区块） */
+/* 响应式：小屏时缩小间距和字号 */
+@media (max-width: 900px) {
+    .nav-links {
+        gap: 28px;
+    }
+    .nav-links li a {
+        font-size: 18px;
+    }
+    .reserve-btn-nav {
+        width: 200px;
+        height: 150px;
+        border-radius: 0 0 0 44px;
+    }
+    .reserve-btn-nav > span:first-child {
+        font-size: 44px;
+    }
+    .reserve-btn-sub {
+        font-size: 16px;
+    }
+}
 
 
 /* Hero Section */
@@ -7081,201 +7100,6 @@ body.js-ready .fade-pill-text {
     .concept-value-card {
         padding: 32px 24px;
     }
-}
-
-/* ================================================================
-   RESPONSIVE (added) — tablet & mobile only, ≤1024px.
-   Desktop (>1024px, MacBook Air etc.) is completely untouched:
-   every rule below lives inside a max-width media query, so nothing
-   here can change the existing desktop layout.
-   The northman scroll-flip effect (.northman-scroll/.northman-sticky/
-   .northman-stage/.northman-card-page, driven by initNorthmanScrollCards()
-   in script.js) is only touched for padding/font/grid/image sizing —
-   the transform/--enter/--shrink logic that drives the flip is untouched.
-================================================================ */
-
-/* ---------- Navbar (all pages) ---------- */
-@media (max-width: 1024px) {
-  .navbar { height: 64px; }
-  body { padding-top: 64px; }
-  .navbar-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-  }
-  .navbar::before { width: 150px; height: 140px; left: -60px; top: -65px; }
-  .navbar-logo { position: static; transform: none; left: auto; top: auto; }
-  .logo-img { height: 52px; }
-  .nav-links-center { position: static; transform: none; left: auto; top: auto; gap: 20px; }
-  .nav-links-center a { font-size: 15px; }
-  .ticket-panel {
-    position: static;
-    width: auto;
-    height: auto;
-    padding: 10px 18px;
-    border-radius: 20px;
-    flex-direction: row;
-  }
-  .ticket-title { font-size: 18px; }
-  .ticket-sub-text { font-size: 11px; }
-}
-
-@media (max-width: 768px) {
-  .navbar { height: 56px; }
-  body { padding-top: 56px; }
-  .navbar-container { padding: 0 14px; }
-  .logo-img { height: 40px; }
-  .nav-links-center { gap: 12px; }
-  .nav-links-center a { font-size: 12px; }
-  .ticket-panel { padding: 8px 12px; gap: 4px; }
-  .ticket-title { font-size: 14px; }
-  .ticket-sub-text { font-size: 9px; }
-}
-
-@media (max-width: 480px) {
-  .navbar-container { padding: 0 10px; }
-  .nav-links-center { gap: 8px; }
-  .nav-links-center a { font-size: 10px; }
-  .ticket-sub-text { display: none; }
-  .ticket-panel { padding: 8px 10px; }
-}
-
-/* ---------- index.html: Hero ---------- */
-@media (max-width: 1024px) {
-  .index-hero-wrapper { margin-top: 0; }
-  .index-text-content { padding: 40px 30px; }
-  .index-text-columns,
-  .index-time-travel {
-    display: none; /* purely decorative vertical-text widgets, same treatment as .hero-vertical-slogans above */
-  }
-  .index-vive-more { margin-left: 0; margin-bottom: 40px; }
-}
-
-@media (max-width: 768px) {
-  .index-text-content { padding: 24px 20px; }
-  .vive-more-text { font-size: 16px; }
-  .vive-more-btn { width: 46px; height: 46px; }
-  .index-vive-more { margin-bottom: 24px; gap: 12px; }
-}
-
-/* ---------- index.html: Services ---------- */
-@media (max-width: 1024px) {
-  .services-section { padding: 60px 32px; margin-top: 60px; }
-  .services-container {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-  .services-left { padding-bottom: 0; }
-  .services-title,
-  .services-description { margin-left: 0; }
-  .services-title { font-size: 3rem; }
-  .services-description { max-width: none; }
-  .services-image-small {
-    position: static;
-    transform: none;
-    margin: 24px 0 0;
-  }
-  .services-small-img { width: 200px; }
-  .services-right { margin-top: 0; }
-  .services-image-top { width: 260px; margin-left: 0; }
-  .services-image-bottom { max-width: 100%; margin-left: 0; margin-right: 0; }
-  .services-about-link { padding-left: 0; margin-top: 24px; }
-}
-
-@media (max-width: 768px) {
-  .services-section { padding: 48px 20px; }
-  .services-title { font-size: 2.2rem; }
-  .services-description { font-size: 16px; line-height: 1.9; }
-  .services-image-top { width: 100%; max-width: 320px; }
-}
-
-/* ---------- index.html: Northman feature cards (flip effect) ----------
-   Only padding / grid / font-size / image sizing are touched. The
-   transform, --enter, --shrink and position rules that the JS scroll
-   handler in script.js relies on are left exactly as-is. */
-@media (max-width: 1024px) {
-  .northman-section { padding: 60px 24px 100px; }
-  .northman-sticky { top: 64px; }
-  .northman-stage { height: min(680px, calc(100vh - 120px)); }
-  .northman-card { padding: 32px 28px; border-radius: 32px; }
-  .northman-card-inner {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    height: 100%;
-    overflow-y: auto;
-    align-content: start;
-  }
-  .northman-left { max-width: none; }
-  .northman-title { font-size: 2rem; margin-bottom: 14px; }
-  .northman-body { font-size: 14px; line-height: 1.7; margin-bottom: 10px; }
-  .northman-main-image { max-height: 220px; object-fit: cover; }
-  .northman-thumb-overlay { right: -16px; bottom: -16px; }
-  .northman-thumb-image { width: 140px; height: 100px; }
-}
-
-@media (max-width: 768px) {
-  .northman-section { padding: 40px 16px 80px; }
-  .northman-sticky { top: 56px; }
-  .northman-stage { height: min(560px, calc(100vh - 96px)); }
-  .northman-card { padding: 24px 20px; border-radius: 24px; }
-  .northman-meta-row { font-size: 11px; margin-bottom: 10px; }
-  .northman-title { font-size: 1.5rem; margin-bottom: 10px; }
-  .northman-body { font-size: 13px; line-height: 1.6; }
-  .northman-view-more { margin-top: 14px; }
-  .northman-main-image { max-height: 150px; }
-  .northman-thumb-overlay { display: none; } /* avoid clutter/overflow in the small card */
-}
-
-/* ---------- index.html: News / Access / Conversation ---------- */
-@media (max-width: 1024px) {
-  .news-section { padding: 80px 32px; }
-  .news-heading { font-size: 3rem; }
-  .news-item { padding: 0 0 40px; margin: 0; }
-  .news-row { grid-template-columns: 1fr; gap: 20px; }
-  .news-thumb img { width: 100%; height: 220px; }
-
-  .access-section { padding: 80px 32px 100px; }
-  .access-title { font-size: 3rem; }
-  .access-info-card { padding: 36px 28px; }
-  .access-info-row { grid-template-columns: 1fr; gap: 24px; }
-  .access-info-grid { grid-template-columns: 1fr; margin-left: 0; }
-
-  .conversation-section { padding: 80px 32px 100px; }
-  .conversation-container { grid-template-columns: 1fr; gap: 40px; }
-  .conversation-left { padding-left: 0; }
-  .conversation-title { font-size: 3rem; }
-  .conversation-right { justify-content: flex-start; }
-  .conversation-arrow { display: none; }
-}
-
-@media (max-width: 768px) {
-  .news-section { padding: 56px 20px; }
-  .news-heading { font-size: 2.2rem; }
-  .news-title { font-size: 1.5rem; }
-
-  .access-section { padding: 56px 20px 80px; }
-  .access-title { font-size: 2.2rem; }
-  .access-info-card { padding: 28px 20px; }
-  .access-info-item { grid-template-columns: 96px 1fr; gap: 14px; }
-  .access-pill { width: 96px; font-size: 10.5px; padding: 10px 0; }
-  .access-map-wrap iframe { height: 280px; }
-
-  .conversation-section { padding: 56px 20px 80px; }
-  .conversation-title { font-size: 2.2rem; }
-  .conversation-bubble { width: 160px; height: 160px; font-size: 13px; }
-}
-
-/* ---------- concept.html: remaining gaps ---------- */
-@media (max-width: 1024px) {
-  .concept-intro { padding-left: 40px; }
-  .banner-text { font-size: 1.6rem; }
-}
-
-@media (max-width: 768px) {
-  .concept-intro { margin-top: 60px; padding-left: 20px; }
-  .banner-text { font-size: 1.2rem; }
-  .banner-icon { width: 40px; height: 40px; }
 }
 
 
